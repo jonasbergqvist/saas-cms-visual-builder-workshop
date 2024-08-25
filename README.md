@@ -7,6 +7,9 @@ Visual Builder is part of CMS 13, which only exist for SaaS CMS at the moment. C
 ## Create an Experience using Visual Builder in Optimizely CMS
 We will start with creating an experience in the SaaS CMS.
 
+### Create API Client in SaaS CMS
+-
+
 ### Create 'Element' content-type using REST API
 -
 
@@ -16,5 +19,11 @@ We will start with creating an experience in the SaaS CMS.
 ### Create Experience in CMS UI
 -
 
+## Create GraphQL query for the experience
+-
+
 ## Create a NextJs application that uses the Experience created in SaaS CMS
+-
+
+## Enable 'Preview mode'
 -
