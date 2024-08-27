@@ -115,7 +115,29 @@ Styles can be created using REST APIs, which editors can select in Visual Builde
       }
 
 ### Create Experience in CMS UI
--
+
+![image](https://github.com/user-attachments/assets/6d68dfaf-6370-4114-8a72-fda5679600d7)
+
+![image](https://github.com/user-attachments/assets/2b85c394-fa27-42c1-8ad5-8400c045030e)
+
+![image](https://github.com/user-attachments/assets/4a926845-15c5-48ef-ab5f-4bca79a88f1b)
+
+![image](https://github.com/user-attachments/assets/226d3ae0-af92-491b-aba1-4317c6dbce6b)
+
+![image](https://github.com/user-attachments/assets/74d57f60-28cf-4a26-bd71-147471fde147)
+
+![image](https://github.com/user-attachments/assets/e14e1faf-bb20-4885-b7d9-9afb661b5969)
+
+![image](https://github.com/user-attachments/assets/a5d9a548-27d5-403e-9717-163c9b83230e)
+
+![image](https://github.com/user-attachments/assets/da8b1501-f893-4e42-995b-d6272c45cd54)
+
+![image](https://github.com/user-attachments/assets/f0ab7818-ca90-4837-bf35-5f1083c1efc5)
+
+![image](https://github.com/user-attachments/assets/126e07cb-9b50-439a-ae5d-d4922e30bf2f)
+
+![image](https://github.com/user-attachments/assets/02488699-246a-4542-8aff-cc1358b2dba2)
+
 
 ## Create GraphQL query for the experience
 -
