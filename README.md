@@ -16,6 +16,8 @@ We will start with creating an experience in the SaaS CMS.
 A value will now be shown in the "Client secret" textbox. Copy both the "Client ID" and "Client secret" so you can store the values temporarily, for example in notepad.
 
 ### Create 'Element' content-type using REST API
+Content-types can be created using REST APIs. We will create a content-type of type "element". Element is similar to a block, but used in Visual Builder.
+
 #### 1. Create access token using Client ID and secret
 ![image](https://github.com/user-attachments/assets/aab7f009-aa4d-447a-a242-bdd4687de883)
 /_cms/preview2/contenttypes
@@ -30,46 +32,87 @@ A value will now be shown in the "Client secret" textbox. Copy both the "Client 
 #### Body: Use raw / json
 ![image](https://github.com/user-attachments/assets/7081f17d-6d97-4d3e-b4de-49d9f20cdfc9)
 
-                {
-                    "key": "SimpleElement",
-                    "displayName": "SimpleElement",
-                    "description": "",
-                    "baseType": "element",
-                    "source": "",
-                    "sortOrder": 0,
-                    "features": [
-                        "localization",
-                        "versioning",
-                        "publishPeriod"
-                    ],
-                    "usage": [
-                        "property",
-                        "instance"
-                    ],
-                    "mayContainTypes": [],
-                    "mediaFileExtensions": [],
-                    "created": "2024-09-10T13:58:42.6533333+00:00",
-                    "lastModified": "2024-09-10T14:19:13.41+00:00",
-                    "lastModifiedBy": "jonas.bergqvist@optimizely.com",
-                    "properties": {
-                        "TestProperty": {
-                            "type": "string",
-                            "format": "html",
-                            "displayName": "TestProperty",
-                            "description": "",
-                            "localized": false,
-                            "required": false,
-                            "group": "Categories",
-                            "sortOrder": 0,
-                            "indexingType": "searchable",
-                            "editorSettings": {}
-                        }
+      {
+          "key": "SimpleElement",
+          "displayName": "SimpleElement",
+          "description": "",
+          "baseType": "element",
+          "source": "",
+          "sortOrder": 0,
+          "features": [
+              "localization",
+              "versioning",
+              "publishPeriod"
+          ],
+          "usage": [
+              "property",
+              "instance"
+          ],
+          "mayContainTypes": [],
+          "mediaFileExtensions": [],
+          "created": "2024-09-10T13:58:42.6533333+00:00",
+          "lastModified": "2024-09-10T14:19:13.41+00:00",
+          "lastModifiedBy": "jonas.bergqvist@optimizely.com",
+          "properties": {
+              "TestProperty": {
+                  "type": "string",
+                  "format": "html",
+                  "displayName": "TestProperty",
+                  "description": "",
+                  "localized": false,
+                  "required": false,
+                  "group": "Categories",
+                  "sortOrder": 0,
+                  "indexingType": "searchable",
+                  "editorSettings": {}
+              }
+          }
+      }
+                
+### Create style using REST API
+Styles can be created using REST APIs, which editors can select in Visual Builder when creating experiances. We will create a simple style on section level.
+
+##### Authentication: Use Barer Token with Token
+![image](https://github.com/user-attachments/assets/990e1bf2-0c24-46e5-be1d-0d5f5770ac0e)
+
+##### Headers: Use Content-Type: application/json
+![image](https://github.com/user-attachments/assets/2a250130-ac2a-49dd-b6ef-b5ab0882afc5)
+
+#### Body: Use raw / json
+![image](https://github.com/user-attachments/assets/6e77e6ca-c1ec-4d28-b893-3c5fa51b5c89)
+
+      {
+        "key": "defaultSection",
+        "displayName": "Default Section",
+        "baseType": "section",
+        "isDefault": true,
+        "settings": {
+            "colorScheme": {
+                "displayName": "Color scheme",
+                "editor": "select",
+                "sortOrder": 10,
+                "choices": {
+                    "default": {
+                    "displayName": "Default",
+                    "sortOrder": 10
+                    },
+                    "primary": {
+                    "displayName": "Primary",
+                    "sortOrder": 20
+                    },
+                    "secondary": {
+                    "displayName": "Secondary",
+                    "sortOrder": 30
                     }
                 }
-
-
-### Create style using REST API
--
+            },
+            "highlight": {
+                "displayName": "Highlighted",
+                "editor": "checkbox",
+                "sortOrder": 10
+            }
+        }
+      }
 
 ### Create Experience in CMS UI
 -
