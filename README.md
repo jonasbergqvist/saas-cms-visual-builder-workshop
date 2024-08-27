@@ -140,7 +140,47 @@ Styles can be created using REST APIs, which editors can select in Visual Builde
 
 
 ## Create GraphQL query for the experience
--
+
+
+![image](https://github.com/user-attachments/assets/5868659e-9ee2-4a4c-b436-8170cb4036ce)
+
+![image](https://github.com/user-attachments/assets/698f81e1-85d1-4a5d-80f7-fa4d1eab5316)
+
+![image](https://github.com/user-attachments/assets/a9469cc4-ceed-455e-bc58-4e5bb2fee3fa)
+
+![image](https://github.com/user-attachments/assets/aebd25b0-e4ea-4f32-ac91-dc9b91ffb4ac)
+
+![image](https://github.com/user-attachments/assets/0f408582-343d-4087-a88f-4fdd52c4c220)
+
+![image](https://github.com/user-attachments/assets/2cf118d0-322f-49a7-a284-5ec10a46b33d)
+
+![image](https://github.com/user-attachments/assets/9aa19b45-26f4-4af7-8c79-a222371f9aa4)
+
+![image](https://github.com/user-attachments/assets/2e73c059-5c12-4e2a-a42f-ccfc7b2ccce2)
+
+![image](https://github.com/user-attachments/assets/a0f1e046-a847-4e22-9014-a5e2b6739610)
+
+![image](https://github.com/user-attachments/assets/29a73ae1-b802-497c-9db0-fb7bc6514f1b)
+
+![image](https://github.com/user-attachments/assets/f7c130aa-348e-4204-967e-90388a3c73ec)
+
+![image](https://github.com/user-attachments/assets/6dc77480-a5ee-45c3-86d0-c3a770c4dc40)
+
+![image](https://github.com/user-attachments/assets/1ed08c1d-c22f-4cc0-83e5-37bffb846ecf)
+
+![image](https://github.com/user-attachments/assets/b81ab3b9-927e-40a2-aaf1-6b40b754bb42)
+
+![image](https://github.com/user-attachments/assets/91f0845f-2a51-4f8d-8d3f-251e13eedfef)
+
+![image](https://github.com/user-attachments/assets/d1abd531-0813-43d3-9c0e-fb0ec13158bd)
+
+![image](https://github.com/user-attachments/assets/4f0e1ac1-ff3a-4127-8be0-38ecc86cde5e)
+
+![image](https://github.com/user-attachments/assets/3f63af0c-61ed-4f94-a8e5-5cb9f12484b5)
+
+![image](https://github.com/user-attachments/assets/39e7a1a9-6bce-41a0-bfdd-8329ae6c0551)
+
+![image](https://github.com/user-attachments/assets/55ee5008-901a-4b6f-b598-e99c092863bb)
 
 ## Create a NextJs application that uses the Experience created in SaaS CMS
 -
