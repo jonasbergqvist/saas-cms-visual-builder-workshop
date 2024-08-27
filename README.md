@@ -32,3 +32,6 @@ A value will now be shown in the "Client secret" textbox. Copy both the "Client 
 
 ## Enable 'Preview mode'
 -
+
+## Setup webhooks
+-
