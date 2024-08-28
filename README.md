@@ -162,10 +162,10 @@ You can also browse to https://cg.optimizely.com/app/graphiql?auth={singleKey} t
 ### 2. Click on the folder icon to open "Explorer" view
 ![image](https://github.com/user-attachments/assets/698f81e1-85d1-4a5d-80f7-fa4d1eab5316)
 
-### 3. Click on "_Experience"
+### 3. Check the types in the schema
 ![image](https://github.com/user-attachments/assets/a9469cc4-ceed-455e-bc58-4e5bb2fee3fa)
 
-### 4. Check the types in the schema
+### 4. Click on "_Experience"
 ![image](https://github.com/user-attachments/assets/aebd25b0-e4ea-4f32-ac91-dc9b91ffb4ac)
 
 ### 5. Click on "items" under "_Experience"
@@ -186,31 +186,28 @@ You can also browse to https://cg.optimizely.com/app/graphiql?auth={singleKey} t
 ### 10. Click on "key" and "nodeType" under "nodes"
 ![image](https://github.com/user-attachments/assets/f7c130aa-348e-4204-967e-90388a3c73ec)
 
-### 11. Execute the query using the red play button
-![image](https://github.com/user-attachments/assets/6dc77480-a5ee-45c3-86d0-c3a770c4dc40)
-
-### 12. Click "compositionStructureNode" under "nodes" and select "nodes" followed by "key" and "nodeType" under "nodes"
+### 11. Click "compositionStructureNode" under "nodes" and select "nodes" followed by "key" and "nodeType" under "nodes"
 ![image](https://github.com/user-attachments/assets/1ed08c1d-c22f-4cc0-83e5-37bffb846ecf)
 
-### 13. Once again click on "compositionStructureNode" under "nodes" in (12) and select "nodes" followed by "key" and "nodeType" 
+### 12. Once again click on "compositionStructureNode" under "nodes" in (12) and select "nodes" followed by "key" and "nodeType" 
 ![image](https://github.com/user-attachments/assets/b81ab3b9-927e-40a2-aaf1-6b40b754bb42)
 
-### 14. Once again click on "compositionStructureNode" under "nodes" in (13) and select "nodes" followed by "key" and "nodeType" 
+### 13. Once again click on "compositionStructureNode" under "nodes" in (13) and select "nodes" followed by "key" and "nodeType" 
 ![image](https://github.com/user-attachments/assets/91f0845f-2a51-4f8d-8d3f-251e13eedfef)
 
-### 15. Execute the query using the red play button
+### 14. Execute the query using the red play button
 ![image](https://github.com/user-attachments/assets/d1abd531-0813-43d3-9c0e-fb0ec13158bd)
 
-### 16. Select "CompositionElement" followed by "element" and "_metadata". Finally select "key" and "types"
+### 15. Select "CompositionElement" followed by "element" and "_metadata". Finally select "key" and "types"
 ![image](https://github.com/user-attachments/assets/4f0e1ac1-ff3a-4127-8be0-38ecc86cde5e)
 
-### 17. Execute the query using the red play button
+### 16. Execute the query using the red play button
 ![image](https://github.com/user-attachments/assets/3f63af0c-61ed-4f94-a8e5-5cb9f12484b5)
 
-### 18. Select "SimpleElement" and field "TestProperty" followed by "json"
+### 17. Select "SimpleElement" and field "TestProperty" followed by "json"
 ![image](https://github.com/user-attachments/assets/39e7a1a9-6bce-41a0-bfdd-8329ae6c0551)
 
-### 19. Execute the query using the red play button
+### 18. Execute the query using the red play button
 ![image](https://github.com/user-attachments/assets/55ee5008-901a-4b6f-b598-e99c092863bb)
 
 ## Create a NextJs application that uses the Experience created in SaaS CMS
