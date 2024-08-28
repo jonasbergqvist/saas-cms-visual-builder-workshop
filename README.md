@@ -154,41 +154,58 @@ Click the publish button in CMS to publish the experience
 
 ## Create GraphQL query for the experience
 
+### 1. Click on CMS in the top menu, and select "Optimizely Graph"
+You can also browse to https://cg.optimizely.com/app/graphiql?auth={singleKey} to get the same GraphiQL UI. We have an example site that can be used if you don't have your own SaaS CMS with key nSabkbOsWUA55R2YBSYvuGCOgfAnEqE5Zah5fTHsaKlm1kQi. Browse to url https://cg.optimizely.com/app/graphiql?auth=nSabkbOsWUA55R2YBSYvuGCOgfAnEqE5Zah5fTHsaKlm1kQi to use that account.
 
+### 2. Click on the folder icon to open "Explorer" view
 ![image](https://github.com/user-attachments/assets/5868659e-9ee2-4a4c-b436-8170cb4036ce)
 
+### 3. Click on "_Experience"
 ![image](https://github.com/user-attachments/assets/698f81e1-85d1-4a5d-80f7-fa4d1eab5316)
 
+### 4. Click on "items" under "_Experience"
 ![image](https://github.com/user-attachments/assets/a9469cc4-ceed-455e-bc58-4e5bb2fee3fa)
 
+### 5. Click on "composition" under "items"
 ![image](https://github.com/user-attachments/assets/aebd25b0-e4ea-4f32-ac91-dc9b91ffb4ac)
 
+### 6. Click on "key" and "nodeType" under "composition"
 ![image](https://github.com/user-attachments/assets/0f408582-343d-4087-a88f-4fdd52c4c220)
 
+### 7. Click on the red play button to execute the query you just have created
 ![image](https://github.com/user-attachments/assets/2cf118d0-322f-49a7-a284-5ec10a46b33d)
 
+### 8. Click on "nodes" under "composition"
 ![image](https://github.com/user-attachments/assets/9aa19b45-26f4-4af7-8c79-a222371f9aa4)
 
+### 9. Click on "key" and "nodeType" under "nodes"
 ![image](https://github.com/user-attachments/assets/2e73c059-5c12-4e2a-a42f-ccfc7b2ccce2)
 
+### 10. Execute the query using the red play button
 ![image](https://github.com/user-attachments/assets/a0f1e046-a847-4e22-9014-a5e2b6739610)
 
-![image](https://github.com/user-attachments/assets/29a73ae1-b802-497c-9db0-fb7bc6514f1b)
-
+### 11. Click "compositionStructureNode" under "nodes" and select "nodes" followed by "key" and "nodeType" under "nodes"
 ![image](https://github.com/user-attachments/assets/f7c130aa-348e-4204-967e-90388a3c73ec)
 
+### 12. Once again click on "compositionStructureNode" under "nodes" in (11) and select "nodes" followed by "key" and "nodeType" 
 ![image](https://github.com/user-attachments/assets/6dc77480-a5ee-45c3-86d0-c3a770c4dc40)
 
+### 14. Once again click on "compositionStructureNode" under "nodes" in (12) and select "nodes" followed by "key" and "nodeType" 
 ![image](https://github.com/user-attachments/assets/1ed08c1d-c22f-4cc0-83e5-37bffb846ecf)
 
+### 15. Execute the query using the red play button
 ![image](https://github.com/user-attachments/assets/b81ab3b9-927e-40a2-aaf1-6b40b754bb42)
 
+### 16. Select "CompositionElement" followed by "element" and "_metadata". Finally select "key" and "types"
 ![image](https://github.com/user-attachments/assets/91f0845f-2a51-4f8d-8d3f-251e13eedfef)
 
+### 17. Execute the query using the red play button
 ![image](https://github.com/user-attachments/assets/d1abd531-0813-43d3-9c0e-fb0ec13158bd)
 
+### 18. Select "SimpleElement" and field "TestProperty" followed by "json"
 ![image](https://github.com/user-attachments/assets/4f0e1ac1-ff3a-4127-8be0-38ecc86cde5e)
 
+### 19. Execute the query using the red play button
 ![image](https://github.com/user-attachments/assets/3f63af0c-61ed-4f94-a8e5-5cb9f12484b5)
 
 ![image](https://github.com/user-attachments/assets/39e7a1a9-6bce-41a0-bfdd-8329ae6c0551)
