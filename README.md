@@ -189,10 +189,10 @@ You can also browse to https://cg.optimizely.com/app/graphiql?auth={singleKey} t
 ### 11. Click "compositionStructureNode" under "nodes" and select "nodes" followed by "key" and "nodeType" under "nodes"
 ![image](https://github.com/user-attachments/assets/1ed08c1d-c22f-4cc0-83e5-37bffb846ecf)
 
-### 12. Once again click on "compositionStructureNode" under "nodes" in (12) and select "nodes" followed by "key" and "nodeType" 
+### 12. Once again click on "compositionStructureNode" under "nodes" in (11) and select "nodes" followed by "key" and "nodeType" 
 ![image](https://github.com/user-attachments/assets/b81ab3b9-927e-40a2-aaf1-6b40b754bb42)
 
-### 13. Once again click on "compositionStructureNode" under "nodes" in (13) and select "nodes" followed by "key" and "nodeType" 
+### 13. Once again click on "compositionStructureNode" under "nodes" in (12) and select "nodes" followed by "key" and "nodeType" 
 ![image](https://github.com/user-attachments/assets/91f0845f-2a51-4f8d-8d3f-251e13eedfef)
 
 ### 14. Execute the query using the red play button
