@@ -4,29 +4,28 @@ This tutorial will guide you in creating a NextJs app, where Visual Builder in O
 ## Get a SaaS CMS Instance from Optimizely
 Visual Builder is part of CMS 13, which only exist for SaaS CMS at the moment. CMS 13 will be released later for PaaS CMS. You will have to reach out to Optimizely to get a SaaS CMS instance to be able to use Visual Builder in this guide.
 
-## Create an Experience using Visual Builder in Optimizely CMS
-We will start with creating an experience in the SaaS CMS.
+## Create API Client in SaaS CMS
 
-### Create API Client in SaaS CMS
-1. Got to "API Clients" in the SaaS CMS UI: /ui/Optimizely.Cms.Service.Security.Turnstile.UI/Clients/
+### 1. Got to "API Clients" in the SaaS CMS UI: /ui/Optimizely.Cms.Service.Security.Turnstile.UI/Clients/
 ![image](https://github.com/user-attachments/assets/e11ca5be-f6e9-43f9-b297-f37169996206)
 
-2. Add a value in "Client ID" and click "Create".
+### 2. Add a value in "Client ID" and click "Create".
 ![image](https://github.com/user-attachments/assets/0bfc8c67-1d5a-4f7e-9ffb-d688077099d7)
 A value will now be shown in the "Client secret" textbox. Copy both the "Client ID" and "Client secret" so you can store the values temporarily, for example in notepad.
 
-### Create 'Element' content-type using REST API
+## Create 'Element' content-type using REST API
 Content-types can be created using REST APIs. We will create a content-type of type "element". Element is similar to a block, but used in Visual Builder.
 
-#### 1. Create access token using Client ID and secret
+### 1. Create access token using Client ID and secret
 ![image](https://github.com/user-attachments/assets/aab7f009-aa4d-447a-a242-bdd4687de883)
 /_cms/preview2/contenttypes
 
-#### 2. Create element using access token
-##### Authentication: Use Barer Token with Token
+### 2. Create element using access token
+
+#### Authentication: Use Barer Token with Token
 ![image](https://github.com/user-attachments/assets/385c3988-69a4-402e-b921-c7ac840924a6)
 
-##### Headers: Use Content-Type: application/json
+#### Headers: Use Content-Type: application/json
 ![image](https://github.com/user-attachments/assets/9e029390-78b5-4004-9419-753b4e481312)
 
 #### Body: Use raw / json
@@ -69,13 +68,13 @@ Content-types can be created using REST APIs. We will create a content-type of t
           }
       }
                 
-### Create style using REST API
+## Create style using REST API
 Styles can be created using REST APIs, which editors can select in Visual Builder when creating experiances. We will create a simple style on section level.
 
-##### Authentication: Use Barer Token with Token
+#### Authentication: Use Barer Token with Token
 ![image](https://github.com/user-attachments/assets/990e1bf2-0c24-46e5-be1d-0d5f5770ac0e)
 
-##### Headers: Use Content-Type: application/json
+#### Headers: Use Content-Type: application/json
 ![image](https://github.com/user-attachments/assets/2a250130-ac2a-49dd-b6ef-b5ab0882afc5)
 
 #### Body: Use raw / json
@@ -114,42 +113,42 @@ Styles can be created using REST APIs, which editors can select in Visual Builde
         }
       }
 
-### Create Experience in CMS UI
+## Create Experience in CMS UI
 
-#### 1. Go to "Edit" and click on "..." on the Root, and click "Create Experience"
+### 1. Go to "Edit" and click on "..." on the Root, and click "Create Experience"
 ![image](https://github.com/user-attachments/assets/6d68dfaf-6370-4114-8a72-fda5679600d7)
 
-#### 2. Select a name for the experience and select "Blank Experience" as blueprint
+### 2. Select a name for the experience and select "Blank Experience" as blueprint
 ![image](https://github.com/user-attachments/assets/2b85c394-fa27-42c1-8ad5-8400c045030e)
 
-#### 3. Click "adding a section" to add a new section in the experience
+### 3. Click "adding a section" to add a new section in the experience
 ![image](https://github.com/user-attachments/assets/4a926845-15c5-48ef-ab5f-4bca79a88f1b)
 
-#### 4.  Select "Blank Section" as blueprint
+### 4.  Select "Blank Section" as blueprint
 ![image](https://github.com/user-attachments/assets/226d3ae0-af92-491b-aba1-4317c6dbce6b)
 
-#### 5.Click "add a row" to create a new row in the section
+### 5.Click "add a row" to create a new row in the section
 ![image](https://github.com/user-attachments/assets/74d57f60-28cf-4a26-bd71-147471fde147)
 
-#### 6. Click "add a column" to create a new column in the row
+### 6. Click "add a column" to create a new column in the row
 ![image](https://github.com/user-attachments/assets/e14e1faf-bb20-4885-b7d9-9afb661b5969)
 
-#### 7. Click "add an element" and select "SimpleElement" in the list
+### 7. Click "add an element" and select "SimpleElement" in the list
 ![image](https://github.com/user-attachments/assets/a5d9a548-27d5-403e-9717-163c9b83230e)
 
-#### 8. Verify that you have a text editor in the element
+### 8. Verify that you have a text editor in the element
 ![image](https://github.com/user-attachments/assets/da8b1501-f893-4e42-995b-d6272c45cd54)
 
-#### 9. Write "Hello World" in the text editor.
+### 9. Write "Hello World" in the text editor.
 ![image](https://github.com/user-attachments/assets/f0ab7818-ca90-4837-bf35-5f1083c1efc5)
 
-#### 10. Click "..." in the "New Blank Section" and select "Style"
+### 10. Click "..." in the "New Blank Section" and select "Style"
 ![image](https://github.com/user-attachments/assets/126e07cb-9b50-439a-ae5d-d4922e30bf2f)
 
-#### 11. Select "Primary" color schema and check "Higlighted"
+### 11. Select "Primary" color schema and check "Higlighted"
 ![image](https://github.com/user-attachments/assets/02488699-246a-4542-8aff-cc1358b2dba2)
 
-#### 12. Publish the page
+### 12. Publish the page
 Click the publish button in CMS to publish the experience
 
 ## Create GraphQL query for the experience
