@@ -904,7 +904,57 @@ Make sure you are in the correct folder (next-js-app) and run the following
 
 You will now get an error when trying to build the application. This is because we haven't added any GraphQL queries yet.
 
-## Create Visual Builder components in NextJs app
+## Create Experience components in NextJs app
+We will now create React components in the application, which will render experiences
+
+### 1. Create a new folder under "src" called "components"
+![image](https://github.com/user-attachments/assets/e9093d94-214f-4f37-be07-87eb629e8ccd)
+
+### 2. Create a folder under "components" called "base"
+![image](https://github.com/user-attachments/assets/2432903f-758d-43ee-a081-ebf1c94f1d43)
+
+### 3. Create a new file under "base" folder called "ExperienceComponent.tsx"
+![image](https://github.com/user-attachments/assets/09e264ab-7837-42df-b23e-f01b0035b3e6)
+
+### 4. Add skeleton for ExperienceComponent.tsx
+Add the following in ExperienceComponent.tsx:
+
+      import { graphql } from "@/graphql/gql";
+      import { optiGraphClient } from "@/optiGraphClient";
+      import { FC } from "react";
+      
+      export const ExperienceQuery = graphql(/* GraphQL */ `
+          
+      `)
+      
+      interface props {
+          url: string | null
+          version: string | null
+      }
+       
+      const ExperienceComponent: FC<props> = async ({ url, version }) => {
+        const data = await optiGraphClient.request(ExperienceQuery, {
+          url,
+          version,
+        });
+          return (
+              <></>
+          )
+      }
+       
+      export default ExperienceComponent
+
+![image](https://github.com/user-attachments/assets/23edca7a-548e-4eed-9c76-fbf7476fd217)
+
+This implementation is far from done. But lets go through what we have so far
+
+#### ExperienceQuery
+-
+
+#### props
+-
+
+#### ExperienceComponent
 -
 
 #### Compile the application
