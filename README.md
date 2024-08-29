@@ -949,13 +949,149 @@ Add the following in ExperienceComponent.tsx:
 This implementation is far from done. But lets go through what we have so far
 
 #### ExperienceQuery
--
+Take the query that you created earlier (section "Create GraphQL query for the experience" and paste it into the ExperienceQuery. The ExperienceQuery should look like this
 
-#### props
--
+      export const ExperienceQuery = graphql(/* GraphQL */ `
+          query MyQuery($url: String, $version: String) {
+          _Experience(
+              where: { _metadata: { url: { default: { eq: $url } }, version: { eq: $version } } }
+          ) {
+              items {
+              _metadata { url {default hierarchical  internal base} }
+              composition {
+                  key
+                  nodeType
+                  nodes {
+                  key
+                  nodeType
+                  ... on CompositionStructureNode {
+                      nodes {
+                      key
+                      nodeType
+                      ... on CompositionStructureNode {
+                          nodes {
+                          key
+                          nodeType
+                          ... on CompositionStructureNode {
+                              nodes {
+                              key
+                              nodeType
+                              ... on CompositionElementNode {
+                                  element {
+                                  _metadata {
+                                      key
+                                      types
+                                  }
+                                  ... on SimpleElement {
+                                      TestProperty {
+                                      json
+                                      }
+                                  }
+                                  }
+                              }
+                              }
+                              displaySettings {
+                              key
+                              value
+                              }
+                          }
+                          }
+                          displaySettings {
+                          key
+                          value
+                          }
+                      }
+                      }
+                      displaySettings {
+                      key
+                      value
+                      }
+                  }
+                  }
+              }
+              }
+          }
+          }
+      `)
 
-#### ExperienceComponent
--
+![image](https://github.com/user-attachments/assets/f1e1b631-61df-4d29-bb5c-9ab43b64cea6)
+
+#### Verify that ExperienceQuery is working
+Save the ExperienceComponent.tsx after the change, and wait a couple of seconds. GraphQL codegen is validating the query and updates the auto-generated types after verification.
+
+It should be possible to build the project now. Verify that by runnin "npm run build" in a terminal
+
+      npm run build
+
+![image](https://github.com/user-attachments/assets/244be7d8-012b-4e8d-aafe-e8596d49e2fd)
+
+#### Update ExperienceComponent to loop through sections, rows, and columns
+We can now use the data from Graph in our component. Lets hover over "data" constant, to see what we get from Graph
+![image](https://github.com/user-attachments/assets/3a503cfe-0d42-4cdc-8b5f-526f2c6dd4b8)
+
+The output is "MyQueryQuery", which can be confusing. This type has been auto-generated based on the query name. Lets first update the query-name in ExperienceQuery to "Experience", and save the file.
+
+![image](https://github.com/user-attachments/assets/1b87da6f-ad80-4e75-a5f4-0275954af317)
+
+The generated type looks much better now
+![image](https://github.com/user-attachments/assets/ce3766af-df88-4cf2-814b-709d2ee9d64c)
+
+Update the html (<></>) to the following
+
+        <div key="unstructuredData" className="relative w-full flex-1 vb:outline">
+            {
+            data?._Experience?.items?.map((experience) => {
+              return (
+                  <div key="unstructuredData" className="relative w-full flex-1 vb:outline">
+                      {
+                      experience?.composition?.nodes?.map((grid) => {
+                          if(grid?.__typename === "CompositionStructureNode") {
+                              return (
+                                  <div className="relative w-full flex flex-col flex-nowrap justify-start vb:grid" data-epi-block-id={grid?.key} key={grid.key}>
+                                      {
+                                      grid.nodes?.map((row) => {
+                                          if(row?.__typename === "CompositionStructureNode") {
+                                              return (
+                                                  <div className="flex-1 flex flex-row flex-nowrap justify-start vb:row" key={row.key}>
+                                                      {
+                                                      row.nodes?.map((column) => {
+                                                          if(column?.__typename === "CompositionStructureNode") {
+                                                              return (
+                                                                  <div className="flex-1 flex flex-col flex-nowrap justify-start vb:col" key={column.key}>
+                                                                      {
+                                                                      column.nodes?.map((node) => {
+                                                                          if(node?.__typename === "CompositionElementNode") {
+                                                                            switch(node?.__typename)
+                                                                            {
+                                                                                default:
+                                                                                    return <>Not implemented exception (for {node?.__typename})</>
+                                                                            }
+                                                                          }
+                                                                      })
+                                                                      }
+                                                                  </div>
+                                                              )
+                                                          }
+                                                      })
+                                                      }
+                                                  </div>
+                                              )
+                                          }
+                                      })
+                                      }
+                                  </div>
+                              )
+                          }
+                          })
+                      }
+                  </div>
+              )
+            })
+            }
+        </div>
+
+![image](https://github.com/user-attachments/assets/c4895e4d-7e76-4d0b-b099-57201e1d5c53)
+
 
 #### Compile the application
 Open a new terminal
