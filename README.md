@@ -1036,7 +1036,7 @@ The output is "MyQueryQuery", which can be confusing. This type has been auto-ge
 The generated type looks much better now
 ![image](https://github.com/user-attachments/assets/ce3766af-df88-4cf2-814b-709d2ee9d64c)
 
-Update the html (<></>) to the following
+Replace the html (<></>) with the following:
 
         <div key="unstructuredData" className="relative w-full flex-1 vb:outline">
             {
@@ -1091,6 +1091,108 @@ Update the html (<></>) to the following
         </div>
 
 ![image](https://github.com/user-attachments/assets/c4895e4d-7e76-4d0b-b099-57201e1d5c53)
+
+#### Replace the default NexJs HTML with the ExperienceComponent
+Open page.tsx under src/app and replace all HTML with the following:
+
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <ExperienceComponent url={null} version={null} />
+    </main>
+
+![image](https://github.com/user-attachments/assets/d1fddbcb-5462-4003-97fc-bb76c8cc1a94)
+
+Save the file
+
+#### Try the application in a browser
+The implementation is not done yet, because we are only looping through all sections, rows, and columns, to finally write a "Not implemented exception" for each element.
+
+But lets see if we can get the "Not Implemented exception" in the website before moving on.
+
+Write "npm run dev" in a terminal
+      npm run dev
+
+![image](https://github.com/user-attachments/assets/36286a01-f755-4679-9ceb-33e71c1ad804)
+
+Browse to [http://localhost:3000](http://localhost:3000)
+
+Nothing is shown, something is wrong.
+
+#### Add __typename for CompositionStructureNode:s
+Open ExperienceComponent.tsx again, and go to the ExperienceQuery. Add __typename under each "CompositionStructureNode" and save the file
+
+      export const ExperienceQuery = graphql(/* GraphQL */ `
+          query Experience($url: String, $version: String) {
+          _Experience(
+              where: { _metadata: { url: { default: { eq: $url } }, version: { eq: $version } } }
+          ) {
+              items {
+              _metadata { url {default hierarchical  internal base} }
+              composition {
+                  key
+                  nodeType
+                  nodes {
+                  key
+                  nodeType
+                  ... on CompositionStructureNode {
+                      __typename
+                      nodes {
+                      key
+                      nodeType
+                      ... on CompositionStructureNode {
+                          __typename
+                          nodes {
+                          key
+                          nodeType
+                          ... on CompositionStructureNode {
+                              __typename
+                              nodes {
+                              key
+                              nodeType
+                              ... on CompositionElementNode {
+                                  __typename
+                                  element {
+                                  _metadata {
+                                      key
+                                      types
+                                  }
+                                  ... on SimpleElement {
+                                      TestProperty {
+                                      json
+                                      }
+                                  }
+                                  }
+                              }
+                              }
+                              displaySettings {
+                              key
+                              value
+                              }
+                          }
+                          }
+                          displaySettings {
+                          key
+                          value
+                          }
+                      }
+                      }
+                      displaySettings {
+                      key
+                      value
+                      }
+                  }
+                  }
+              }
+              }
+          }
+          }
+      `)
+
+![image](https://github.com/user-attachments/assets/0e78a960-34e8-44bb-9c7f-655f1da18c02)
+
+Save the file, and check the browser again. It should work now
+![image](https://github.com/user-attachments/assets/9cd15ac7-76e2-4453-a157-40a3088dc635)
+
+### 5. Add SimpleElementComponent
 
 
 #### Compile the application
