@@ -19,22 +19,32 @@ A value will now be shown in the "Client secret" textbox. Copy both the "Client 
 Content-types can be created using REST APIs. We will create a content-type of type "element". Element is similar to a block, but used in Visual Builder. We are going to use [Postman](https://www.postman.com/downloads/) in this example, but you can use any tool of choose.
 
 ### 1. Create access token using Client ID and secret
-Use POST with url {cms-path}/_cms/preview2/contenttypes for example https://app-ocxcjobe11znb7p003.cms.optimizely.com/_cms/preview2/contenttypes
+Use POST with url {your-cms-path}/_cms/preview2/oauth/token for example https://app-ocxcjobe11znb7p003.cms.optimizely.com/_cms/preview2/oauth/token. Add the following into the text area and change value for "client_id" and "client_secret" to the values you got in the CMS for "API Client" (see Add a value in "Client ID and click "Create")
+
+      {
+        "grant_type": "client_credentials",
+        "client_id": "{your client_id}",
+        "client_secret": "{your client_secret}"
+      }
+
+Push "Send" to execute the request, and look at the response in the bottom. Copy the value for "access_token" and paste it somewhere temporarly, for example in notepad.
 ![image](https://github.com/user-attachments/assets/aab7f009-aa4d-447a-a242-bdd4687de883)
 
 ### 2. Create element using access token
 We can create new content-types in CMS now when we have an access token. The access token will only be valid for 300 seconds, so you have to create a new token after 300 seconds to continue using the REST API (see "Create access token using Client ID and secret")
 
+Use POST with url {your-cms-path}/_cms/preview2/contenttypes for example https://app-ocxcjobe11znb7p003.cms.optimizely.com/_cms/preview2/contenttypes. Add the following into the text area and change value for "client_id" and "client_secret" to the values you got in the CMS for "API Client" (see Add a value in "Client ID and click "Create")
+
 #### Authentication
 Go to the "Authorization" tab. Use "Bearer Token" as Auth Type, and paste the access_token into the "Token" text area.
 ![image](https://github.com/user-attachments/assets/385c3988-69a4-402e-b921-c7ac840924a6)
 
-#### Headers:
-Go to "Headers" tab Use Content-Type: application/json
+#### Headers
+Go to "Headers" tab. Add Content-Type as Key and application/json as Value
 ![image](https://github.com/user-attachments/assets/9e029390-78b5-4004-9419-753b4e481312)
 
-#### Body: Use raw / json
-![image](https://github.com/user-attachments/assets/7081f17d-6d97-4d3e-b4de-49d9f20cdfc9)
+#### Body
+Use "raw" with "JSON" and paste the following into the text area
 
       {
           "key": "SimpleElement",
@@ -72,18 +82,25 @@ Go to "Headers" tab Use Content-Type: application/json
               }
           }
       }
-                
+
+Push "Send" to execute the query. This will create the content-type in CMS.
+![image](https://github.com/user-attachments/assets/7081f17d-6d97-4d3e-b4de-49d9f20cdfc9)
+
 ## Create style using REST API
 Styles can be created using REST APIs, which editors can select in Visual Builder when creating experiances. We will create a simple style on section level.
 
-#### Authentication: Use Barer Token with Token
+Use POST with url {your-cms-path}/_cms/preview2/displaytemplates for example https://app-ocxcjobe11znb7p003.cms.optimizely.com/_cms/preview2/displaytemplates. Add the following into the text area and change value for "client_id" and "client_secret" to the values you got in the CMS for "API Client" (see Add a value in "Client ID and click "Create")
+
+#### Authentication
+Go to the "Authorization" tab. Use "Bearer Token" as Auth Type, and paste the access_token into the "Token" text area.
 ![image](https://github.com/user-attachments/assets/990e1bf2-0c24-46e5-be1d-0d5f5770ac0e)
 
-#### Headers: Use Content-Type: application/json
+#### Headers
+Go to "Headers" tab. Add Content-Type as Key and application/json as Value
 ![image](https://github.com/user-attachments/assets/2a250130-ac2a-49dd-b6ef-b5ab0882afc5)
 
-#### Body: Use raw / json
-![image](https://github.com/user-attachments/assets/6e77e6ca-c1ec-4d28-b893-3c5fa51b5c89)
+#### Body
+Use "raw" with "JSON" and paste the following into the text area
 
       {
         "key": "defaultSection",
@@ -118,7 +135,10 @@ Styles can be created using REST APIs, which editors can select in Visual Builde
         }
       }
 
+![image](https://github.com/user-attachments/assets/6e77e6ca-c1ec-4d28-b893-3c5fa51b5c89)
+
 ## Create Experience in CMS UI
+We will create an experience in the CMS UI, which uses both the new element we created, as well as the new style.
 
 ### 1. Go to "Edit" and click on "..." on the Root, and click "Create Experience"
 ![image](https://github.com/user-attachments/assets/6d68dfaf-6370-4114-8a72-fda5679600d7)
@@ -209,9 +229,131 @@ You can also browse to https://cg.optimizely.com/app/graphiql?auth={singleKey} t
 ![image](https://github.com/user-attachments/assets/3f63af0c-61ed-4f94-a8e5-5cb9f12484b5)
 
 ### 17. Select "SimpleElement" and field "TestProperty" followed by "json"
+The following query should have been generated
+
+      query MyQuery {
+        _Experience {
+          items {
+            composition {
+              key
+              nodeType
+              nodes {
+                key
+                nodeType
+                ... on CompositionStructureNode {
+                  nodes {
+                    key
+                    nodeType
+                    ... on CompositionStructureNode {
+                      nodes {
+                        key
+                        nodeType
+                        ... on CompositionStructureNode {
+                          nodes {
+                            key
+                            nodeType
+                            ... on CompositionElementNode {
+                              element {
+                                _metadata {
+                                  key
+                                  types
+                                }
+                                ... on SimpleElement {
+                                  TestProperty {
+                                    json
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
 ![image](https://github.com/user-attachments/assets/39e7a1a9-6bce-41a0-bfdd-8329ae6c0551)
 
 ### 18. Execute the query using the red play button
+The following result should be shown (correlationId will be different)
+
+      {
+        "data": {
+          "_Experience": {
+            "items": [
+              {
+                "composition": {
+                  "key": "93a8be60a2414076806fc8b57f072c4a",
+                  "nodeType": "experience",
+                  "nodes": [
+                    {
+                      "key": "bf4f8dbd-47d3-4512-a1e1-896d36e0fe78",
+                      "nodeType": "section",
+                      "nodes": [
+                        {
+                          "key": "c34cef1b-003b-443d-8ddd-94d1210ee167",
+                          "nodeType": "row",
+                          "nodes": [
+                            {
+                              "key": "c20b21d4-42f1-422a-bb7b-72cf946efe37",
+                              "nodeType": "column",
+                              "nodes": [
+                                {
+                                  "key": "e2415ece-69c4-4ec4-b3fa-b1bbe0c89f9e",
+                                  "nodeType": "element",
+                                  "element": {
+                                    "_metadata": {
+                                      "key": null,
+                                      "types": [
+                                        "SimpleElement",
+                                        "_Element",
+                                        "_Component",
+                                        "_Content"
+                                      ]
+                                    },
+                                    "TestProperty": {
+                                      "json": {
+                                        "type": "richText",
+                                        "children": [
+                                          {
+                                            "type": "paragraph",
+                                            "children": [
+                                              {
+                                                "text": "Hello World!"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "extensions": {
+          "correlationId": "8baacf2adb2682c1",
+          "cost": 33,
+          "costSummary": [
+            "_Experience(33) = limit(20) + fields(13)"
+          ]
+        }
+      }
+
 ![image](https://github.com/user-attachments/assets/55ee5008-901a-4b6f-b598-e99c092863bb)
 
 ## Create a NextJs application that uses the Experience created in SaaS CMS
