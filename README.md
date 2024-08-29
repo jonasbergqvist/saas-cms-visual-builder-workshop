@@ -356,6 +356,70 @@ The following result should be shown (correlationId will be different)
 
 ![image](https://github.com/user-attachments/assets/55ee5008-901a-4b6f-b598-e99c092863bb)
 
+### 19. Add styling information on all levels
+Click on "displaySettings" and select "key" and "value" under the 3 "CompositionStructureNode"s that was added previously
+
+The generated query should look like the following:
+      query MyQuery {
+        _Experience {
+          items {
+            composition {
+              key
+              nodeType
+              nodes {
+                key
+                nodeType
+                ... on CompositionStructureNode {
+                  nodes {
+                    key
+                    nodeType
+                    ... on CompositionStructureNode {
+                      nodes {
+                        key
+                        nodeType
+                        ... on CompositionStructureNode {
+                          nodes {
+                            key
+                            nodeType
+                            ... on CompositionElementNode {
+                              element {
+                                _metadata {
+                                  key
+                                  types
+                                }
+                                ... on SimpleElement {
+                                  TestProperty {
+                                    json
+                                  }
+                                }
+                              }
+                            }
+                          }
+                          displaySettings {
+                            key
+                            value
+                          }
+                        }
+                      }
+                      displaySettings {
+                        key
+                        value
+                      }
+                    }
+                  }
+                  displaySettings {
+                    key
+                    value
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+![image](https://github.com/user-attachments/assets/5517254e-cf36-40fe-8cc6-d4d2337a6b56)
+
 ## Create a NextJs application that uses the Experience created in SaaS CMS
 -
 
