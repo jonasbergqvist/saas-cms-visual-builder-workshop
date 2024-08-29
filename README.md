@@ -5,27 +5,32 @@ This tutorial will guide you in creating a NextJs app, where Visual Builder in O
 Visual Builder is part of CMS 13, which only exist for SaaS CMS at the moment. CMS 13 will be released later for PaaS CMS. You will have to reach out to Optimizely to get a SaaS CMS instance to be able to use Visual Builder in this guide.
 
 ## Create API Client in SaaS CMS
+And API Client is needed for creating content-types using REST, as well as creating styles using REST.
 
-### 1. Got to "API Clients" in the SaaS CMS UI: /ui/Optimizely.Cms.Service.Security.Turnstile.UI/Clients/
+### 1. Got to "API Clients" in the SaaS CMS UI
+Click on "admin" and look for "API Clients" under "Settings".
 ![image](https://github.com/user-attachments/assets/e11ca5be-f6e9-43f9-b297-f37169996206)
 
 ### 2. Add a value in "Client ID" and click "Create".
-![image](https://github.com/user-attachments/assets/0bfc8c67-1d5a-4f7e-9ffb-d688077099d7)
 A value will now be shown in the "Client secret" textbox. Copy both the "Client ID" and "Client secret" so you can store the values temporarily, for example in notepad.
+![image](https://github.com/user-attachments/assets/0bfc8c67-1d5a-4f7e-9ffb-d688077099d7)
 
 ## Create 'Element' content-type using REST API
-Content-types can be created using REST APIs. We will create a content-type of type "element". Element is similar to a block, but used in Visual Builder.
+Content-types can be created using REST APIs. We will create a content-type of type "element". Element is similar to a block, but used in Visual Builder. We are going to use [Postman](https://www.postman.com/downloads/) in this example, but you can use any tool of choose.
 
 ### 1. Create access token using Client ID and secret
+Use POST with url {cms-path}/_cms/preview2/contenttypes for example https://app-ocxcjobe11znb7p003.cms.optimizely.com/_cms/preview2/contenttypes
 ![image](https://github.com/user-attachments/assets/aab7f009-aa4d-447a-a242-bdd4687de883)
-/_cms/preview2/contenttypes
 
 ### 2. Create element using access token
+We can create new content-types in CMS now when we have an access token. The access token will only be valid for 300 seconds, so you have to create a new token after 300 seconds to continue using the REST API (see "Create access token using Client ID and secret")
 
-#### Authentication: Use Barer Token with Token
+#### Authentication
+Go to the "Authorization" tab. Use "Bearer Token" as Auth Type, and paste the access_token into the "Token" text area.
 ![image](https://github.com/user-attachments/assets/385c3988-69a4-402e-b921-c7ac840924a6)
 
-#### Headers: Use Content-Type: application/json
+#### Headers:
+Go to "Headers" tab Use Content-Type: application/json
 ![image](https://github.com/user-attachments/assets/9e029390-78b5-4004-9419-753b4e481312)
 
 #### Body: Use raw / json
