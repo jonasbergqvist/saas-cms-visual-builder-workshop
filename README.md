@@ -176,6 +176,19 @@ We will create an experience in the CMS UI, which uses both the new element we c
 ### 12. Publish the page
 Click the publish button in CMS to publish the experience
 
+## Set your experience in CMS as the start page
+We will registrate an application, and set the start page to our experience
+
+### 1. Go to Applications under "Settings"
+![image](https://github.com/user-attachments/assets/680d3551-5448-469e-9931-c81850728dd4)
+
+### 2. Click "Create Application"
+Select an application name and select "From Existing" under "Choose Start Page". Select your experience
+![image](https://github.com/user-attachments/assets/293cf651-1e03-4503-b1f1-d0f637cfb634)
+
+### 3. Click "Create Application"
+![image](https://github.com/user-attachments/assets/5be88ecb-b7af-4576-b8b3-2c3167b58cd8)
+
 ## Create GraphQL query for the experience
 
 ### 1. Click on CMS in the top menu, and select "Optimizely Graph"
@@ -360,6 +373,7 @@ The following result should be shown (correlationId will be different)
 Click on "displaySettings" and select "key" and "value" under the 3 "CompositionStructureNode"s that was added previously
 
 The generated query should look like the following:
+
       query MyQuery {
         _Experience {
           items {
@@ -419,6 +433,284 @@ The generated query should look like the following:
       }
 
 ![image](https://github.com/user-attachments/assets/5517254e-cf36-40fe-8cc6-d4d2337a6b56)
+
+### 20. Execute the query using the red play button
+The following result should be shown (correlationId will be different)
+
+      {
+        "data": {
+          "_Experience": {
+            "items": [
+              {
+                "composition": {
+                  "key": "93a8be60a2414076806fc8b57f072c4a",
+                  "nodeType": "experience",
+                  "nodes": [
+                    {
+                      "key": "bf4f8dbd-47d3-4512-a1e1-896d36e0fe78",
+                      "nodeType": "section",
+                      "nodes": [
+                        {
+                          "key": "c34cef1b-003b-443d-8ddd-94d1210ee167",
+                          "nodeType": "row",
+                          "nodes": [
+                            {
+                              "key": "c20b21d4-42f1-422a-bb7b-72cf946efe37",
+                              "nodeType": "column",
+                              "nodes": [
+                                {
+                                  "key": "e2415ece-69c4-4ec4-b3fa-b1bbe0c89f9e",
+                                  "nodeType": "element",
+                                  "element": {
+                                    "_metadata": {
+                                      "key": null,
+                                      "types": [
+                                        "SimpleElement",
+                                        "_Element",
+                                        "_Component",
+                                        "_Content"
+                                      ]
+                                    },
+                                    "TestProperty": {
+                                      "json": {
+                                        "type": "richText",
+                                        "children": [
+                                          {
+                                            "type": "paragraph",
+                                            "children": [
+                                              {
+                                                "text": "Hello World!"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "displaySettings": []
+                            }
+                          ],
+                          "displaySettings": []
+                        }
+                      ],
+                      "displaySettings": [
+                        {
+                          "key": "colorScheme",
+                          "value": "primary"
+                        },
+                        {
+                          "key": "highlight",
+                          "value": "true"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "extensions": {
+          "correlationId": "8bab2d7bfc335f10",
+          "cost": 39,
+          "costSummary": [
+            "_Experience(39) = limit(20) + fields(19)"
+          ]
+        }
+      }
+
+![image](https://github.com/user-attachments/assets/f801640f-c448-4387-9ab2-925e43f618a4)
+
+### 21. Create variables for "url" and "version"
+Our query will currently return all experiences that we create in the CMS. We can make it possible to get a specific experience by adding an identifier. The identifier could be the key, or in our case the url. We will also add a variable for "version", which will make it possible for us to get "preview" in CMS to work.
+
+#### Create where-clause using the Explorer view
+Click on "where" under "_Experience" and then "_metadata", followed by "url" and then "default". Select "eq". Also select "eq" for "version" under "_metadata".
+![image](https://github.com/user-attachments/assets/d58492a5-897d-45eb-9752-8d9b1cc2ba9d)
+
+Executing the query will give us empty result, because we will try to get an experience with url equals "". We will have to go into the query textbox and do some modifications.
+
+#### Create variables
+Start the query modification by setting paranteses after "MyQuery"
+![image](https://github.com/user-attachments/assets/2a043e52-927f-49e6-b8df-7558f1e6d426)
+
+Then write the following inside the paranteses
+      $url: String, $version: String
+![image](https://github.com/user-attachments/assets/c17f17c2-4b00-43cc-ad76-408f1640a54a)
+
+We have now created two variables, one for "url" and one for "version". Next thing is to use them in the query.
+
+#### Update where-clause to use variables
+Change the values for "eq" to instead use the variables
+      where: { _metadata: { url: { default: { eq: $url } }, version: { eq: $version } } }
+![image](https://github.com/user-attachments/assets/04e166c6-b81e-4f67-ba57-639560364e49)
+
+#### Verify query and execute
+The query should now look like the following
+
+      query MyQuery($url: String, $version: String) {
+        _Experience(
+          where: { _metadata: { url: { default: { eq: $url } }, version: { eq: $version } } }
+        ) {
+          items {
+            composition {
+              key
+              nodeType
+              nodes {
+                key
+                nodeType
+                ... on CompositionStructureNode {
+                  nodes {
+                    key
+                    nodeType
+                    ... on CompositionStructureNode {
+                      nodes {
+                        key
+                        nodeType
+                        ... on CompositionStructureNode {
+                          nodes {
+                            key
+                            nodeType
+                            ... on CompositionElementNode {
+                              element {
+                                _metadata {
+                                  key
+                                  types
+                                }
+                                ... on SimpleElement {
+                                  TestProperty {
+                                    json
+                                  }
+                                }
+                              }
+                            }
+                          }
+                          displaySettings {
+                            key
+                            value
+                          }
+                        }
+                      }
+                      displaySettings {
+                        key
+                        value
+                      }
+                    }
+                  }
+                  displaySettings {
+                    key
+                    value
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+Executing the query should give us all existing experiences in CMS, because we haven't used any values for the variables (the variables are null).
+
+      {
+        "data": {
+          "_Experience": {
+            "items": [
+              {
+                "composition": {
+                  "key": "93a8be60a2414076806fc8b57f072c4a",
+                  "nodeType": "experience",
+                  "nodes": [
+                    {
+                      "key": "bf4f8dbd-47d3-4512-a1e1-896d36e0fe78",
+                      "nodeType": "section",
+                      "nodes": [
+                        {
+                          "key": "c34cef1b-003b-443d-8ddd-94d1210ee167",
+                          "nodeType": "row",
+                          "nodes": [
+                            {
+                              "key": "c20b21d4-42f1-422a-bb7b-72cf946efe37",
+                              "nodeType": "column",
+                              "nodes": [
+                                {
+                                  "key": "e2415ece-69c4-4ec4-b3fa-b1bbe0c89f9e",
+                                  "nodeType": "element",
+                                  "element": {
+                                    "_metadata": {
+                                      "key": null,
+                                      "types": [
+                                        "SimpleElement",
+                                        "_Element",
+                                        "_Component",
+                                        "_Content"
+                                      ]
+                                    },
+                                    "TestProperty": {
+                                      "json": {
+                                        "type": "richText",
+                                        "children": [
+                                          {
+                                            "type": "paragraph",
+                                            "children": [
+                                              {
+                                                "text": "Hello World!"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "displaySettings": []
+                            }
+                          ],
+                          "displaySettings": []
+                        }
+                      ],
+                      "displaySettings": [
+                        {
+                          "key": "colorScheme",
+                          "value": "primary"
+                        },
+                        {
+                          "key": "highlight",
+                          "value": "true"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "extensions": {
+          "correlationId": "8bab899429fe7724",
+          "cost": 39,
+          "costSummary": [
+            "_Experience(39) = limit(20) + fields(19)"
+          ]
+        }
+      }
+![image](https://github.com/user-attachments/assets/f45689b0-044f-49c8-91d0-62bc852e4ebe)
+
+#### Try executing query with variable value
+Click on "Variables" to open the variables view
+![image](https://github.com/user-attachments/assets/a8858b86-e501-44d2-bf03-8650f2de6244)
+
+Add the following variable value
+
+      {
+        "url": "/en/demoexperience/"
+      }
+
+Try executing the query to see if you get result. You will only get result if you named your experience "demoexperience" and created it with english language. Try to modify the url value to match the name of your experience in CMS and execute again
+![image](https://github.com/user-attachments/assets/fada88b9-948c-445b-bf26-be06e0e2ec41)
+
+![image](https://github.com/user-attachments/assets/67d17479-fd35-4777-9858-b01f523b8174)
 
 ## Create a NextJs application that uses the Experience created in SaaS CMS
 -
