@@ -713,7 +713,32 @@ Try executing the query to see if you get result. You will only get result if yo
 ![image](https://github.com/user-attachments/assets/67d17479-fd35-4777-9858-b01f523b8174)
 
 ## Create a NextJs application that uses the Experience created in SaaS CMS
--
+We will now create a NextJs application, which will use the query we created above. We are going to use Visual Studio Code (https://code.visualstudio.com/download) in the examples, but you can also use another IDE
+
+### 1. Open "Visual Studio Code" and open a folder, in which you will create the application 
+![image](https://github.com/user-attachments/assets/899b65fa-d4a5-4d6c-8617-f93647cb9b07)
+
+### 2. Open a terminal
+![image](https://github.com/user-attachments/assets/f47cfd81-834e-4454-b203-45fc4ed4c396)
+
+### 3. Write "npx create-next-app@latest" in the terminal and press enter
+![image](https://github.com/user-attachments/assets/7fcd69ee-e3eb-40ad-9b5f-4866a950fc60)
+
+### 4. Install any needed package
+![image](https://github.com/user-attachments/assets/d6a0a9fb-b08b-489b-8da7-875d52276028)
+
+### 5. Select a name (next-js-app), click enter, and select the default selections for all coming questions
+![image](https://github.com/user-attachments/assets/614f283f-10b3-48e8-8a02-c44d79b56a0f)
+
+### 6. Write "cd next-js-app" in the terminal to go to your application
+![image](https://github.com/user-attachments/assets/ef2f2ef4-9563-4bf4-ad8a-deac691647fb)
+
+### 7. Write "npm run dev" to start the application
+![image](https://github.com/user-attachments/assets/a07a75a4-3c59-41cc-8037-b6b3ea52fc35)
+
+### 8. Browse to your application: [http:](http://localhost:3000/)
+![image](https://github.com/user-attachments/assets/7f2f58e1-10f8-4ff5-9054-b32cc7ec95a4)
+
 
 ## Enable 'Preview mode'
 -
