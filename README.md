@@ -712,8 +712,8 @@ Try executing the query to see if you get result. You will only get result if yo
 
 ![image](https://github.com/user-attachments/assets/67d17479-fd35-4777-9858-b01f523b8174)
 
-## Create a NextJs application that uses the Experience created in SaaS CMS
-We will now create a NextJs application, which will use the query we created above. We are going to use Visual Studio Code (https://code.visualstudio.com/download) in the examples, but you can also use another IDE
+## Create a NextJs application with needed dependencies
+We will now create a NextJs application, which will have needed dependencies for us to integrate with Optimizely Graph. We are going to use Visual Studio Code (https://code.visualstudio.com/download) in the examples, but you can also use another IDE
 
 ### 1. Open "Visual Studio Code" and open a folder, in which you will create the application 
 ![image](https://github.com/user-attachments/assets/899b65fa-d4a5-4d6c-8617-f93647cb9b07)
@@ -736,9 +736,62 @@ We will now create a NextJs application, which will use the query we created abo
 ### 7. Write "npm run dev" to start the application
 ![image](https://github.com/user-attachments/assets/a07a75a4-3c59-41cc-8037-b6b3ea52fc35)
 
-### 8. Browse to your application: [http:](http://localhost:3000/)
+### 8. Browse to your application: [http://localhost:3000](http://localhost:3000/)
 ![image](https://github.com/user-attachments/assets/7f2f58e1-10f8-4ff5-9054-b32cc7ec95a4)
 
+### 9. Open file "package.json" modify it
+The file should look like this
+
+      {
+        "name": "next-js-app",
+        "version": "0.1.0",
+        "private": true,
+        "scripts": {
+          "codegen": "graphql-codegen --watch",
+          "dev": "next dev",
+          "build": "next build",
+          "start": "next start",
+          "lint": "next lint"
+        },
+        "dependencies": {
+          "graphql": "^16.9.0",
+          "html-react-parser": "^5.1.12",
+          "react": "^18",
+          "react-dom": "^18",
+          "next": "14.2.6"
+        },
+        "devDependencies": {
+          "@graphql-codegen/cli": "^5.0.2",
+          "@graphql-codegen/client-preset": "^4.3.3",
+          "@parcel/watcher": "^2.4.1",
+          "typescript": "^5",
+          "@types/node": "^20",
+          "@types/react": "^18",
+          "@types/react-dom": "^18",
+          "postcss": "^8",
+          "tailwindcss": "^3.4.1",
+          "eslint": "^8",
+          "eslint-config-next": "14.2.6"
+        }
+      }
+
+Save the file after update
+
+### 10. Stop the site and install packages
+Click somewhere in the terminal and press controll+c. Accept terminating batch job
+![image](https://github.com/user-attachments/assets/513e0a65-c6c0-4d6a-ad0f-453855c8b0e5)
+
+Write "npm install" and click enter to install all needed dependencies
+![image](https://github.com/user-attachments/assets/ddea1530-f07b-49ce-ae8f-4e9aa7a3c7b0)
+
+Test the application by writing "npm run build" and press enter
+![image](https://github.com/user-attachments/assets/45e719c0-5932-41c1-998f-4addba2ccbec)
+
+## Generate TypeScript classes, based on GraphQL schema, in NextJs app
+-
+
+## Create VisualBuilder components in NextJs app
+-
 
 ## Enable 'Preview mode'
 -
