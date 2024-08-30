@@ -1,6 +1,7 @@
 import { graphql } from "@/graphql/gql";
 import { optiGraphClient } from "@/optiGraphClient";
 import { FC } from "react";
+import SimpleElementComponent from "../elements/SimpleElementComponent";
 
 export const ExperienceQuery = graphql(/* GraphQL */ `
     query Experience($url: String, $version: String) {
@@ -33,15 +34,12 @@ export const ExperienceQuery = graphql(/* GraphQL */ `
                         ... on CompositionElementNode {
                             __typename
                             element {
-                            _metadata {
-                                key
-                                types
-                            }
-                            ... on SimpleElement {
-                                TestProperty {
-                                json
+                                __typename
+                                _metadata {
+                                    key
+                                    types
                                 }
-                            }
+                                ... SimpleElement
                             }
                         }
                         }
@@ -91,7 +89,7 @@ const ExperienceComponent: FC<props> = async ({ url, version }) => {
                               return (
                                   <div className="relative w-full flex flex-col flex-nowrap justify-start vb:grid" data-epi-block-id={grid?.key} key={grid.key}>
                                       {
-                                      grid.nodes?.map((row) => {
+                                        grid.nodes?.map((row) => {
                                           if(row?.__typename === "CompositionStructureNode") {
                                               return (
                                                   <div className="flex-1 flex flex-row flex-nowrap justify-start vb:row" key={row.key}>
@@ -103,8 +101,10 @@ const ExperienceComponent: FC<props> = async ({ url, version }) => {
                                                                       {
                                                                       column.nodes?.map((node) => {
                                                                           if(node?.__typename === "CompositionElementNode") {
-                                                                            switch(node?.__typename)
+                                                                            switch(node?.element?.__typename)
                                                                             {
+                                                                                case "SimpleElement":
+                                                                                    return <SimpleElementComponent element={node.element} />
                                                                                 default:
                                                                                     return <>Not implemented exception (for {node?.__typename})</>
                                                                             }
