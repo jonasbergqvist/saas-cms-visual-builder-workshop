@@ -8,17 +8,17 @@ The branch "step-3-create-experience-component" contains the solution for this p
 ## 9.1. Create "components" folder
 Create a new folder under "src" called "components"
 
-![image](https://github.com/user-attachments/assets/e9093d94-214f-4f37-be07-87eb629e8ccd)
+![image](https://github.com/user-attachments/assets/ce2988a0-f5a8-4005-ad8c-bc6292ef5aa3)
 
 ## 9.2. Create "base" folder
 Create a folder under "components" called "base"
 
-![image](https://github.com/user-attachments/assets/2432903f-758d-43ee-a081-ebf1c94f1d43)
+![image](https://github.com/user-attachments/assets/ccea0424-dba8-42f2-be56-15a2e5354c53)
 
 ## 9.3. Create "ExperienceComponent.tsx"
 Create a new file under "base" folder called "ExperienceComponent.tsx"
 
-![image](https://github.com/user-attachments/assets/09e264ab-7837-42df-b23e-f01b0035b3e6)
+![image](https://github.com/user-attachments/assets/3540455e-0a51-4d3e-9bf4-630c42a6e6ec)
 
 ## 9.4. Add skeleton for ExperienceComponent.tsx
 Add the following in ExperienceComponent.tsx:
@@ -48,7 +48,7 @@ Add the following in ExperienceComponent.tsx:
        
       export default ExperienceComponent
 
-![image](https://github.com/user-attachments/assets/23edca7a-548e-4eed-9c76-fbf7476fd217)
+![image](https://github.com/user-attachments/assets/a9965e9f-42b5-40e0-9bed-e855912d92c7)
 
 This implementation is far from done. But lets go through what we have so far
 
@@ -56,74 +56,68 @@ This implementation is far from done. But lets go through what we have so far
 Take the query that you created earlier (section "Create GraphQL query for the experience" and paste it into the ExperienceQuery. The ExperienceQuery should look like this
 
       export const ExperienceQuery = graphql(/* GraphQL */ `
-        query MyQuery($url: String, $version: String) {
-            _Experience(
-            where: { _metadata: { url: { default: { eq: $url } }, version: { eq: $version } } }
-            ) {
-            items {
-                composition {
-                    __typename
-                    key
-                    nodeType
-                    nodes {
-                        __typename
-                        key
-                        nodeType
-                        ... on CompositionStructureNode {
-                            nodes {
-                                __typename
-                                key
-                                nodeType
-                                ... on CompositionStructureNode {
-                                    nodes {
-                                        __typename
-                                        key
-                                        nodeType
-                                        ... on CompositionStructureNode {
-                                            nodes {
-                                                __typename
-                                                key
-                                                nodeType
-                                                ... on CompositionElementNode {
-                                                    element {
-                                                        __typename
-                                                        _metadata {
-                                                        key
-                                                        types
-                                                    }
-                                                    ... on SimpleElement {
-                                                        TestProperty {
-                                                            json
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                        displaySettings {
-                                            key
-                                            value
-                                        }
-                                    }
-                                }
-                                displaySettings {
-                                    key
-                                    value
-                                }
-                            }
-                        }
-                        displaySettings {
-                            key
-                            value
-                        }
-                    }
-                }
-                }
-            }
-            }
-        }
+          query MyQuery($url: String, $version: String) {
+          _Experience(
+              where: { _metadata: { url: { default: { eq: $url } }, version: { eq: $version } } }
+          ) {
+              items {
+              _metadata { url {default hierarchical  internal base} }
+              composition {
+                  key
+                  nodeType
+                  nodes {
+                  key
+                  nodeType
+                  ... on CompositionStructureNode {
+                      __typename
+                      nodes {
+                      key
+                      nodeType
+                      ... on CompositionStructureNode {
+                          __typename
+                          nodes {
+                          key
+                          nodeType
+                          ... on CompositionStructureNode {
+                              __typename
+                              nodes {
+                              key
+                              nodeType
+                              ... on CompositionElementNode {
+                                  __typename
+                                  element {
+                                      __typename
+                                      _metadata {
+                                          key
+                                          types
+                                      }
+                                  }
+                              }
+                              }
+                              displaySettings {
+                              key
+                              value
+                              }
+                          }
+                          }
+                          displaySettings {
+                          key
+                          value
+                          }
+                      }
+                      }
+                      displaySettings {
+                      key
+                      value
+                      }
+                  }
+                  }
+              }
+              }
+          }
+          }
       `)
 
-![image](https://github.com/user-attachments/assets/0dc628dd-6697-4be6-921e-ea63294f5bcd)
 
 ### 9.4.2 Verify query
 Verify that ExperienceQuery is working
@@ -134,14 +128,16 @@ Save the ExperienceComponent.tsx after the change, and wait a couple of seconds.
 Update ExperienceComponent to loop through sections, rows, and columns
 
 We can now use the data from Graph in our component. Lets hover over "data" constant, to see what we get from Graph
-![image](https://github.com/user-attachments/assets/3a503cfe-0d42-4cdc-8b5f-526f2c6dd4b8)
+
+![image](https://github.com/user-attachments/assets/6d091921-b27f-448e-902e-76a6a822c032)
 
 The output is "MyQueryQuery", which can be confusing. This type has been auto-generated based on the query name. Lets first update the query-name in ExperienceQuery to "Experience", and save the file.
 
 ![image](https://github.com/user-attachments/assets/1b87da6f-ad80-4e75-a5f4-0275954af317)
 
 The generated type looks much better now
-![image](https://github.com/user-attachments/assets/ce3766af-df88-4cf2-814b-709d2ee9d64c)
+
+![image](https://github.com/user-attachments/assets/9111af22-aab4-4afb-8254-6386842b9942)
 
 Replace the html (<></>) with the following:
 
@@ -197,7 +193,9 @@ Replace the html (<></>) with the following:
             }
         </div>
 
-![image](https://github.com/user-attachments/assets/c4895e4d-7e76-4d0b-b099-57201e1d5c53)
+This code will loop through every section. In every section it will loop through every row. In every row it will loop through every column. For every column it will loop through every element. The code will finally use a switch to select which element component to load. We haven't created any element component yet, so lets only write 'Not implemented exception' for now. We will add the 'SimpleElement' in next section.
+
+![image](https://github.com/user-attachments/assets/780681ae-103c-48a8-82b7-533bbc19356a)
 
 ### 9.4.4 Use ExperienceComponent
 Replace the default NexJs HTML with the ExperienceComponent
@@ -220,7 +218,7 @@ The page.tsx should look like the following now:
     );
     }
 
-![image](https://github.com/user-attachments/assets/d1fddbcb-5462-4003-97fc-bb76c8cc1a94)
+![image](https://github.com/user-attachments/assets/a9de6d4c-77d7-461e-a61c-2838b51296a6)
 
 Save the file
 
@@ -376,7 +374,7 @@ Write "npm run dev" in a terminal
 
       npm run dev
 
-![image](https://github.com/user-attachments/assets/36286a01-f755-4679-9ceb-33e71c1ad804)
+![image](https://github.com/user-attachments/assets/e4a2d475-31ff-4f23-8361-c2bf543100fd)
 
 Browse to [http://localhost:3000](http://localhost:3000)
 

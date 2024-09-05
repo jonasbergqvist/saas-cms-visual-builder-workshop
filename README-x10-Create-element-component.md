@@ -9,12 +9,12 @@ The branch "step-4-create-simple-element-component" contains the solution for th
 ## 10.1 Create 'element' folder
 Create folder 'element' under 'components'
 
-![image](https://github.com/user-attachments/assets/6b3c248a-eef7-4765-9e3e-27ceeb0e1381)
+![image](https://github.com/user-attachments/assets/9556b170-04d7-4015-835a-aa901361a8c6)
 
 ## 10.2 Create 'SimpleElementComponent.tsx'
 Create a new file named 'SimpleElementComponent.tsx' under 'element' folder
 
-![image](https://github.com/user-attachments/assets/58fdadd4-9276-40be-a8f0-55ea6637f91c)
+![image](https://github.com/user-attachments/assets/cb05bf6f-38c3-4411-964c-5fbd7bf3befc)
 
 ## 10.3 Add skeleton for SimpleElementComponent.tsx
 
@@ -35,7 +35,7 @@ Create a new file named 'SimpleElementComponent.tsx' under 'element' folder
        
       export default SimpleElementComponent
 
-![image](https://github.com/user-attachments/assets/a370cebe-a8f0-4829-9b4d-d87ea61045ce)
+![image](https://github.com/user-attachments/assets/abbb0f40-ecc9-493f-ba6a-e3b4eaf88a69)
 
 The file will contain a partial query, called fragment. We will have to do a small modification of our 'Experience' query to seperate the 'SimpleElement' part into a fragment.
 
@@ -46,8 +46,6 @@ Go to the SaaS CMS and GrapiQL, or use the direct url to [GraphiQL](https://cg.o
 
 ![image](https://github.com/user-attachments/assets/dd4805d0-edeb-4849-8cb9-a705ffae5d5b)
 
-![image](https://github.com/user-attachments/assets/186879b8-747e-403d-9857-0740bd4ab15c)
-
 Write the following at the top of the query window
 
       fragment SimpleElement on SimpleElement
@@ -57,7 +55,7 @@ Write the following at the top of the query window
         }
       }
 
-![image](https://github.com/user-attachments/assets/241867f0-92b8-4097-a784-afa8db63e7c6)
+![image](https://github.com/user-attachments/assets/7724d510-568a-4c6a-bc07-7786684f8a7b)
 
 Then change the main query, to reference the fragment
 
@@ -139,11 +137,11 @@ The full query should now look like this
         }
       }
 
-![image](https://github.com/user-attachments/assets/21da4d82-060b-4163-8f56-ca1be1ca67c0)
+![image](https://github.com/user-attachments/assets/9a02f654-24ee-4bf8-8db5-41c41a29b14d)
 
 Try to run the query, to see if you still get the same result
 
-![image](https://github.com/user-attachments/assets/01ce4c99-f63d-48e9-88c2-d8638964648e)
+![image](https://github.com/user-attachments/assets/25a6721e-110a-42fb-b9c5-cdfc738ffc6b)
 
 ## 10.5 Update 'SimpleElementFragment
 Update 'SimpleElementFragment' in 'SimpleElementComponent.tsx' to look like this
@@ -175,9 +173,33 @@ Update the HTML to look like this
           )
       }
 
-![image](https://github.com/user-attachments/assets/467e0f0f-6a9c-42f0-abb4-9075003f55d5)
+![image](https://github.com/user-attachments/assets/36b6eadf-210a-4c90-8eb6-3b8c3afe52e9)
 
 Save the file
+
+The full SimpleElementComponent.tsx should now look like this
+
+    import { FragmentType, useFragment, graphql } from '@/graphql'
+    
+    export const SimpleElementFragment = graphql(/* GraphQL */ `
+        fragment SimpleElement on SimpleElement
+        {
+        TestProperty {
+            json
+        }
+        }
+    `)
+    
+    const SimpleElementComponent = (props: {
+        element: FragmentType<typeof SimpleElementFragment>
+    }) => {
+        const element = useFragment(SimpleElementFragment, props.element)
+        return (
+            <div>{element.TestProperty?.json}</div>
+        )
+    }
+    
+    export default SimpleElementComponent
 
 ## 10.7 Update 'ExperienceComponent.tsx'
 Update 'ExperienceComponent.tsx' to reference fragment
@@ -248,7 +270,144 @@ Upen 'ExperienceComponent.tsx' and do the same change of the query that you did 
           }
       `)
 
-![image](https://github.com/user-attachments/assets/41587454-7fc6-42b4-bd2a-413f4b51c34f)
+![image](https://github.com/user-attachments/assets/2c43fb4f-549d-47bd-815d-a2bc711dd7fa)
+
+The full ExperienceComponent.tsx should now look like this
+
+    import { graphql } from "@/graphql/gql";
+    import { optiGraphClient } from "@/optiGraphClient";
+    import { FC } from "react";
+
+    export const ExperienceQuery = graphql(/* GraphQL */ `
+        query Experience($url: String, $version: String) {
+        _Experience(
+            where: { _metadata: { url: { default: { eq: $url } }, version: { eq: $version } } }
+        ) {
+            items {
+            _metadata { url {default hierarchical  internal base} }
+            composition {
+                key
+                nodeType
+                nodes {
+                key
+                nodeType
+                ... on CompositionStructureNode {
+                    __typename
+                    nodes {
+                    key
+                    nodeType
+                    ... on CompositionStructureNode {
+                        __typename
+                        nodes {
+                        key
+                        nodeType
+                        ... on CompositionStructureNode {
+                            __typename
+                            nodes {
+                            key
+                            nodeType
+                            ... on CompositionElementNode {
+                                __typename
+                                element {
+                                    __typename
+                                    _metadata {
+                                        key
+                                        types
+                                    }
+                                    ... SimpleElement
+                                }
+                            }
+                            }
+                            displaySettings {
+                            key
+                            value
+                            }
+                        }
+                        }
+                        displaySettings {
+                        key
+                        value
+                        }
+                    }
+                    }
+                    displaySettings {
+                    key
+                    value
+                    }
+                }
+                }
+            }
+            }
+        }
+        }
+    `)
+
+    interface props {
+        url: string | null
+        version: string | null
+    }
+    
+    const ExperienceComponent: FC<props> = async ({ url, version }) => {
+    const data = await optiGraphClient.request(ExperienceQuery, {
+        url,
+        version,
+    });
+        return (
+            <div key="unstructuredData" className="relative w-full flex-1 vb:outline">
+            {
+            data?._Experience?.items?.map((experience) => {
+            return (
+                <div key="unstructuredData" className="relative w-full flex-1 vb:outline">
+                    {
+                    experience?.composition?.nodes?.map((grid) => {
+                        if(grid?.__typename === "CompositionStructureNode") {
+                            return (
+                                <div className="relative w-full flex flex-col flex-nowrap justify-start vb:grid" data-epi-block-id={grid?.key} key={grid.key}>
+                                    {
+                                    grid.nodes?.map((row) => {
+                                        if(row?.__typename === "CompositionStructureNode") {
+                                            return (
+                                                <div className="flex-1 flex flex-row flex-nowrap justify-start vb:row" key={row.key}>
+                                                    {
+                                                    row.nodes?.map((column) => {
+                                                        if(column?.__typename === "CompositionStructureNode") {
+                                                            return (
+                                                                <div className="flex-1 flex flex-col flex-nowrap justify-start vb:col" key={column.key}>
+                                                                    {
+                                                                    column.nodes?.map((node) => {
+                                                                        if(node?.__typename === "CompositionElementNode") {
+                                                                            switch(node?.__typename)
+                                                                            {
+                                                                                default:
+                                                                                    return <>Not implemented exception (for {node?.__typename})</>
+                                                                            }
+                                                                        }
+                                                                    })
+                                                                    }
+                                                                </div>
+                                                            )
+                                                        }
+                                                    })
+                                                    }
+                                                </div>
+                                            )
+                                        }
+                                    })
+                                    }
+                                </div>
+                            )
+                        }
+                        })
+                    }
+                </div>
+            )
+            })
+            }
+        </div>
+        )
+    }
+    
+    export default ExperienceComponent
 
 ## 10.8 Update HTML
 Update HTML to use 'SimpleElementComponent'
@@ -263,7 +422,7 @@ Update the switch to look like the following
             return <>Not implemented exception (for {node?.__typename})</>
     }
 
-![image](https://github.com/user-attachments/assets/eec57774-9cb6-4875-a7e6-eb7d2348ab55)
+![image](https://github.com/user-attachments/assets/9b5a54b6-a73d-4a0b-ac56-c7d9a722b7cf)
 
 The 'ExperienceComponent.tsx' should now look like:
 

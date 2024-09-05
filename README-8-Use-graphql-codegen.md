@@ -10,7 +10,7 @@ Create a new file in the root of the next-js-app named "codegen.ts"
 
 ![image](https://github.com/user-attachments/assets/511fd47a-416e-4a5f-a4b2-d4e04ae7fd8a)
 
-![image](https://github.com/user-attachments/assets/530ecfda-6f62-4ec0-9067-2907db7c2627)
+![image](https://github.com/user-attachments/assets/e2d542bc-1008-4ced-9372-6aee84b036b5)
 
 Add the following in codegen.ts
 
@@ -60,20 +60,21 @@ Run GraphQL Codegen in a new terminal
 Create new terminal and make sure you are in correct folder
 
 Click on + in the terminal to add a new terminal
-![image](https://github.com/user-attachments/assets/a1a38fa8-e77e-458a-9bc5-125285e24040)
+
+![image](https://github.com/user-attachments/assets/372ad3c5-604c-4b3c-8901-2478ef7e27c4)
 
 Make sure you are in correct folder in the terminal (next-js-app). Otherwise use "cd next-js-app" to get to correct folder
 
       cd next-js-app
       
-![image](https://github.com/user-attachments/assets/1dda598f-225c-4b10-821d-71d93872e74a)
+![image](https://github.com/user-attachments/assets/a2beb14c-b3bf-40f1-a931-22086f5bbe8c)
 
 ### 8.2.2 Start codegen
 Write "npm run codegen" to start GraphQL Codegen. This works because we have created a script called "codegen" in the package.json
 
       npm run codegen
 
-![image](https://github.com/user-attachments/assets/22fcff8c-1d26-47b7-917c-7628638c714b)
+![image](https://github.com/user-attachments/assets/f5bfc44d-b987-4ecc-a746-b4c4672fbb81)
 
 A new folder named "graphql" have been created, and some files have been auto-generated under it
 ![image](https://github.com/user-attachments/assets/7f007fe8-3482-4466-b611-aecd488b68b8)
@@ -85,7 +86,8 @@ We will create a small GraphQL client, which uses your Graph account
 
 ### 8.3.1 Create an environment file
 Create a new file named .env in the next-js-app
-![image](https://github.com/user-attachments/assets/86e2f594-5931-4db7-a8f8-80fbfbe9b75d)
+
+![image](https://github.com/user-attachments/assets/ceb5449c-5dfb-415e-9e83-0bdf5e268136)
 
 Add the following in the file
 
@@ -106,7 +108,7 @@ Create a new file called
       
 in the "src" folder
 
-![image](https://github.com/user-attachments/assets/dc8bfea9-8e77-4c29-936a-8a3e1bc281d6)
+![image](https://github.com/user-attachments/assets/4bc708dc-5298-45ed-bdac-c9f869b5e88f)
 
 Add the following code to the file
 
@@ -120,7 +122,8 @@ Make sure to save the file.
 
 ### 8.3.3 Error when building
 Open a new terminal
-![image](https://github.com/user-attachments/assets/b8176bda-441c-49ee-822c-1210888cb1ae)
+
+![image](https://github.com/user-attachments/assets/dae66a6c-be94-41ef-8f51-facc1a67a586)
 
 Make sure you are in the correct folder (next-js-app) and run the following
 

@@ -1,5 +1,7 @@
 # 7. Create a NextJs application with needed dependencies
-We will now create a NextJs application, which will have needed dependencies for us to integrate with Optimizely Graph. We are going to use Visual Studio Code (https://code.visualstudio.com/download) in the examples, but you can also use another IDE
+We will now create a NextJs application, which will have needed dependencies for us to integrate with Optimizely Graph. We are going to use Visual Studio Code, which can be downloaded for free here: [https://code.visualstudio.com/download](https://code.visualstudio.com/download).
+
+You will have to install Node.js to complete this section. You can download Node.js here: [https://nodejs.org/en/download/prebuilt-installer](https://nodejs.org/en/download/prebuilt-installer). Make sure to install Node.Js before continuing.
 
 The branch "step-1-nextjs-app-with-dependencies" contains the solution for this part (7).
 
@@ -28,7 +30,7 @@ Install any needed package
 ### 7.3.2. Select name
 Select a name (next-js-app), click enter, and select the default selections for all coming questions
 
-![image](https://github.com/user-attachments/assets/614f283f-10b3-48e8-8a02-c44d79b56a0f)
+![image](https://github.com/user-attachments/assets/6daaabba-5f6c-4014-9201-af9769f8d539)
 
 ![image](https://github.com/user-attachments/assets/bbdfb5f4-641c-46c5-9d32-4fd471130947)
 
@@ -39,7 +41,7 @@ Write
   
 in the terminal to go to your application
 
-![image](https://github.com/user-attachments/assets/ef2f2ef4-9563-4bf4-ad8a-deac691647fb)
+![image](https://github.com/user-attachments/assets/1fc14c40-4c83-4228-85ac-6ca426d0e960)
 
 ## 7.5. Start the application
 Write
@@ -48,7 +50,7 @@ Write
   
 to start the application
 
-![image](https://github.com/user-attachments/assets/a07a75a4-3c59-41cc-8037-b6b3ea52fc35)
+![image](https://github.com/user-attachments/assets/0f975e5a-17e6-4fee-b093-9c86d197f6ce)
 
 ## 7.6. Browse to the site
 Browse to your application: [http://localhost:3000](http://localhost:3000/)
@@ -117,6 +119,8 @@ The file should look similar to this (versions might differ)
         }
       }
 
+![image](https://github.com/user-attachments/assets/03f197cc-3bf2-4e4b-a4a8-d4dd70298f96)
+
 Save the file after update.
 
 ## 7.8. Install dependencies
@@ -136,7 +140,7 @@ Write
   
 and click enter to install all needed dependencies
 
-![image](https://github.com/user-attachments/assets/ddea1530-f07b-49ce-ae8f-4e9aa7a3c7b0)
+![image](https://github.com/user-attachments/assets/f3faa899-9bfd-4255-b02e-39fc14b0de70)
 
 Test the application by writing
 
@@ -144,4 +148,5 @@ Test the application by writing
   
 and press enter
 
-![image](https://github.com/user-attachments/assets/45e719c0-5932-41c1-998f-4addba2ccbec)
+![image](https://github.com/user-attachments/assets/be4dace9-9da8-4fa3-9cd5-7700f46b399f)
+

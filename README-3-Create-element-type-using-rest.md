@@ -9,18 +9,24 @@ for example
 
     https://app-ocxcjobe11znb7p003.cms.optimizely.com/_cms/preview2/contenttypes
 
+![image](https://github.com/user-attachments/assets/2bc6d0f8-06d6-4d8a-8209-12c39ca5e642)
+
 ## 3.1. Authentication
 Go to the "Authorization" tab. Use "Bearer Token" as Auth Type, and paste the access_token into the "Token" text area.
 
-![image](https://github.com/user-attachments/assets/385c3988-69a4-402e-b921-c7ac840924a6)
+![image](https://github.com/user-attachments/assets/8c6eff67-b750-436f-88b3-2bddac5cbeb8)
 
 ## 3.2. Headers
 Go to "Headers" tab. Add Content-Type as Key and application/json as Value
 
-![image](https://github.com/user-attachments/assets/9e029390-78b5-4004-9419-753b4e481312)
+![image](https://github.com/user-attachments/assets/da474dad-9834-41f5-8493-f47fdfd1575b)
 
 ## 3.3. Body
-Use "raw" with "JSON" and paste the following into the text area
+Use "raw" with "JSON" in body
+
+![image](https://github.com/user-attachments/assets/788de5b2-2ee1-4ea8-bd72-1a0f407d9104)
+
+Paste the following into the text area
 
       {
           "key": "SimpleElement",
@@ -61,7 +67,7 @@ Use "raw" with "JSON" and paste the following into the text area
 
 Push "Send" to execute the query. This will create the content-type in CMS.
 
-![image](https://github.com/user-attachments/assets/7081f17d-6d97-4d3e-b4de-49d9f20cdfc9)
+![image](https://github.com/user-attachments/assets/77bd3187-6dd3-437f-b9eb-3782196b4d28)
 
 ## 3.4. Verify the element in CMS
 Go to 'Settings' -> 'Content Types' in CMS, and verify that a new element called 'SimpleElement' has been created. Check if you missed to set the request to "POST" in Postman, in case no element exist in CMS.

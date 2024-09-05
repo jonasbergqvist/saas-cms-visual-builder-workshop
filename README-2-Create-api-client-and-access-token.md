@@ -6,14 +6,14 @@ Got to "API Clients" in the SaaS CMS UI
 
 Click on "admin" and look for "API Clients" under "Settings".
 
-![image](https://github.com/user-attachments/assets/e11ca5be-f6e9-43f9-b297-f37169996206)
+![image](https://github.com/user-attachments/assets/cdc3ea48-5547-4b05-b843-db013f28dc34)
 
 ## 2.2. Create API Client
 Add a value in "Client ID" and click "Create".
 
 A value will now be shown in the "Client secret" textbox. Copy both the "Client ID" and "Client secret" so you can store the values temporarily, for example in notepad.
 
-![image](https://github.com/user-attachments/assets/0bfc8c67-1d5a-4f7e-9ffb-d688077099d7)
+![image](https://github.com/user-attachments/assets/973ccf35-2f5e-403e-8031-9337e3a62b94)
 
 ## 2.3. Create access token
 Create access token using Client ID and secret.
@@ -27,6 +27,8 @@ Use POST with url
 for example
 
     https://app-ocxcjobe11znb7p003.cms.optimizely.com/_cms/preview2/oauth/token.
+
+![image](https://github.com/user-attachments/assets/8bb19a51-67b2-4ecd-a9e6-efd7056702c5)
 
 Open tab "Body" and select "raw" and then "JSON"
 
@@ -42,6 +44,6 @@ Add the following into the text area, where you need to change value for "client
 
 Push "Send" to execute the request, and look at the response in the bottom. Copy the value for "access_token" and paste it somewhere temporarly, for example in notepad.
 
-![image](https://github.com/user-attachments/assets/aab7f009-aa4d-447a-a242-bdd4687de883)
+![image](https://github.com/user-attachments/assets/0b330405-c164-4655-987c-6c09a1882111)
 
 We can create new content-types in CMS when we have an access token. The access token will only be valid for 300 seconds, so you have to create a new token after 300 seconds to continue using the REST API (see "Create access token using Client ID and secret")

@@ -8,19 +8,25 @@ Use POST with url
 for example
 
     https://app-ocxcjobe11znb7p003.cms.optimizely.com/_cms/preview2/displaytemplates
+
+![image](https://github.com/user-attachments/assets/feb6d228-f1f4-4acc-976b-dd8d707dbd63)
     
 ## 4.1. Authentication
 Go to the "Authorization" tab. Use "Bearer Token" as Auth Type, and paste the access_token into the "Token" text area.
 
-![image](https://github.com/user-attachments/assets/990e1bf2-0c24-46e5-be1d-0d5f5770ac0e)
+![image](https://github.com/user-attachments/assets/b5a365fc-ee71-40a9-949f-c68f40511cc9)
 
 ## 4.2. Headers
 Go to "Headers" tab. Add Content-Type as Key and application/json as Value
 
-![image](https://github.com/user-attachments/assets/2a250130-ac2a-49dd-b6ef-b5ab0882afc5)
+![image](https://github.com/user-attachments/assets/07815867-ed45-48ea-b839-0ac5b849cebe)
 
 ## 4.3. Body
-Use "raw" with "JSON" and paste the following into the text area
+Use "raw" with "JSON"
+
+![image](https://github.com/user-attachments/assets/5c7f59e0-e475-4032-bd4a-5c1484210224)
+
+Paste the following into the text area
 
       {
         "key": "defaultSection",
@@ -55,4 +61,5 @@ Use "raw" with "JSON" and paste the following into the text area
         }
       }
 
-![image](https://github.com/user-attachments/assets/6e77e6ca-c1ec-4d28-b893-3c5fa51b5c89)
+![image](https://github.com/user-attachments/assets/4b44fe49-d0db-4a46-8d5c-f5c045d4f9e5)
+

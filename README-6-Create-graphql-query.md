@@ -2,7 +2,11 @@
 We will create the GraphQL query to deliver the experience. The query could be used by any programming language, targeting any platform (web, native mobile, kiosk etz)
 
 ## 6.1. Open GraphiQL
-Click on CMS in the top menu, and select "Optimizely Graph". You can also browse to
+Click on CMS in the top menu, and select "Optimizely Graph". 
+
+![image](https://github.com/user-attachments/assets/fdf60ff8-9a0d-4a13-93db-1ae26acc3d30)
+
+You can also browse to
 
     https://cg.optimizely.com/app/graphiql?auth={singleKey}
     
@@ -10,18 +14,14 @@ to get the same GraphiQL UI. We have an example site that can be used if you don
 
     nSabkbOsWUA55R2YBSYvuGCOgfAnEqE5Zah5fTHsaKlm1kQi
     
-Browse to url
+Browse to url [https://cg.optimizely.com/app/graphiql?auth=nSabkbOsWUA55R2YBSYvuGCOgfAnEqE5Zah5fTHsaKlm1kQi](https://cg.optimizely.com/app/graphiql?auth=nSabkbOsWUA55R2YBSYvuGCOgfAnEqE5Zah5fTHsaKlm1kQi) to use that account.
 
-    https://cg.optimizely.com/app/graphiql?auth=nSabkbOsWUA55R2YBSYvuGCOgfAnEqE5Zah5fTHsaKlm1kQi
-    
-to use that account.
-
-![image](https://github.com/user-attachments/assets/5868659e-9ee2-4a4c-b436-8170cb4036ce)
+![image](https://github.com/user-attachments/assets/4d8bc380-59d2-4b77-bc16-e6fb84fe8221)
 
 ## 6.2. Open Explorer view
 Click on the folder icon to open "Explorer" view
 
-![image](https://github.com/user-attachments/assets/698f81e1-85d1-4a5d-80f7-fa4d1eab5316)
+![image](https://github.com/user-attachments/assets/19242384-0fa8-4e53-a3d9-ec55d05a037a)
 
 ## 6.3. Inspect types
 Check the types in the schema. There are more types in this screenshot than you will have. Make sure you have one type named "_Experience".
@@ -31,71 +31,71 @@ Check the types in the schema. There are more types in this screenshot than you 
 ## 6.4. Query for _Experience
 Click on "_Experience"
 
-![image](https://github.com/user-attachments/assets/aebd25b0-e4ea-4f32-ac91-dc9b91ffb4ac)
+![image](https://github.com/user-attachments/assets/eeb89d0a-03bc-4095-a30a-c59d669c4867)
 
 ## 6.5. Select items
 Click on "items" under "_Experience"
 
-![image](https://github.com/user-attachments/assets/0f408582-343d-4087-a88f-4fdd52c4c220)
+![image](https://github.com/user-attachments/assets/768b3ecb-b7bd-43fa-892e-a7631a29ecae)
 
 ## 6.6. Select compositions
 Click on "composition" under "items"
 
-![image](https://github.com/user-attachments/assets/2cf118d0-322f-49a7-a284-5ec10a46b33d)
+![image](https://github.com/user-attachments/assets/50457502-c4f9-4694-b268-6f5badbcff68)
 
 ## 6.7. Select key and node type
 Click on "key" and "nodeType" under "composition"
 
-![image](https://github.com/user-attachments/assets/9aa19b45-26f4-4af7-8c79-a222371f9aa4)
+![image](https://github.com/user-attachments/assets/60e035ce-88a5-4af3-a42c-1d76d9b7c5b5)
 
 ## 6.8. Execute query
 Click on the red play button to execute the query you just have created
 
-![image](https://github.com/user-attachments/assets/2e73c059-5c12-4e2a-a42f-ccfc7b2ccce2)
+![image](https://github.com/user-attachments/assets/535d58b5-eb26-40a1-9e3f-d3cf4396d6a3)
 
 ## 6.9. Select nodes in composition
 Click on "nodes" under "composition"
 
-![image](https://github.com/user-attachments/assets/a0f1e046-a847-4e22-9014-a5e2b6739610)
+![image](https://github.com/user-attachments/assets/03e9b148-72f3-45f6-9eda-d75f59c98f33)
 
 ## 6.10. Select key and node type
 Click on "key" and "nodeType" under "nodes"
 
 Execute the query
 
-![image](https://github.com/user-attachments/assets/f7c130aa-348e-4204-967e-90388a3c73ec)
+![image](https://github.com/user-attachments/assets/a7b6be06-02e3-4f53-b2b1-70f7b32900fe)
 
 ## 6.11. Select 'rows'
 Click "compositionStructureNode" under "nodes" and select "nodes" followed by "key" and "nodeType" under "nodes".
 
 Execute the query
 
-![image](https://github.com/user-attachments/assets/1ed08c1d-c22f-4cc0-83e5-37bffb846ecf)
+![image](https://github.com/user-attachments/assets/4fc6dd17-94bb-40f6-a5f2-4662a1931e43)
 
 ## 6.12. Select 'columns'
 Once again click on "compositionStructureNode" under "nodes", and select "nodes" followed by "key" and "nodeType" 
 
-![image](https://github.com/user-attachments/assets/b81ab3b9-927e-40a2-aaf1-6b40b754bb42)
+![image](https://github.com/user-attachments/assets/d6b2f789-b603-4a9c-a3e4-d3d48c459ce1)
 
 ## 6.13. Select elements
 Once again click on "compositionStructureNode" under "nodes", and select "nodes" followed by "key" and "nodeType" 
 
-![image](https://github.com/user-attachments/assets/91f0845f-2a51-4f8d-8d3f-251e13eedfef)
+![image](https://github.com/user-attachments/assets/481315aa-f978-4c43-98ba-77f652a855d1)
 
 ## 6.14. Execute the query
 Execute the query using the red play button
 
-![image](https://github.com/user-attachments/assets/d1abd531-0813-43d3-9c0e-fb0ec13158bd)
+![image](https://github.com/user-attachments/assets/11e9edba-fbdc-4156-8dc0-531457e34d66)
 
 ## 6.15. Select meta data for elements
 Select "CompositionElement" followed by "element" and "_metadata". Finally select "key" and "types"
 
-![image](https://github.com/user-attachments/assets/4f0e1ac1-ff3a-4127-8be0-38ecc86cde5e)
+![image](https://github.com/user-attachments/assets/866ebb5a-f99a-49f6-b728-c2ca4349140b)
 
 ## 6.16. Execute the query
 Execute the query using the red play button
 
-![image](https://github.com/user-attachments/assets/3f63af0c-61ed-4f94-a8e5-5cb9f12484b5)
+![image](https://github.com/user-attachments/assets/d4660d15-e4e5-43f9-82c5-121e9d0ec8de)
 
 ## 6.17. Select simple element
 Select "SimpleElement" and field "TestProperty" followed by "json".
@@ -148,7 +148,7 @@ The following query should have been generated
         }
       }
 
-![image](https://github.com/user-attachments/assets/39e7a1a9-6bce-41a0-bfdd-8329ae6c0551)
+![image](https://github.com/user-attachments/assets/07cbdc71-baab-4dc2-b890-538f37e24525)
 
 ## 6.18. Execute the query
 The following result should be shown (correlationId will be different)
@@ -225,7 +225,7 @@ The following result should be shown (correlationId will be different)
         }
       }
 
-![image](https://github.com/user-attachments/assets/55ee5008-901a-4b6f-b598-e99c092863bb)
+![image](https://github.com/user-attachments/assets/90d25457-978f-4a38-b20b-51898ec542e9)
 
 ## 6.19. Add styling
 Add styling information on all levels.

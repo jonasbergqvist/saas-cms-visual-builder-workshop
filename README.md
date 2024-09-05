@@ -1,5 +1,7 @@
 # SaaS CMS Visual Builder Workshop
-This repository will guide you in creating a NextJs app, where Visual Builder in Optimizely SaaS CMS will be used
+This repository will guide you in creating a NextJs app, where Visual Builder in Optimizely SaaS CMS will be used.
+
+This repository is people that wants to learn how to create a website with Visual Builder. It has been designed to make it possible for non-developers to create the webisite.
 
 ## 1. [Get a SaaS CMS Instance from Optimizely](https://github.com/jonasbergqvist/saas-cms-visual-builder-workshop/blob/main/README-1-Get-saas-cms-instance.md)
 You can start at section "5. Create Experience in CMS UI" in case you don't have a SaaS CMS instance. But feel free to go through the first sections to understand all parts, even if you don't have your own SaaS CMS instance.
@@ -30,3 +32,6 @@ This section will go through how to add a generic experience component to a Next
 
 ## 10. [Add SimpleElementComponent](https://github.com/jonasbergqvist/saas-cms-visual-builder-workshop/blob/main/README-x10-Create-element-component.md)
 This section will go through how to create an element component in a NextJs app, and how to reference it from the experience component.
+
+## 11. Next step
+Look into the [Optimizely SaaS starter](https://github.com/remkoj/optimizely-saas-starter) to get things like "preview mode", deployment to Vercel etz.
