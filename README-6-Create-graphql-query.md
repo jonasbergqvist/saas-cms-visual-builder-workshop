@@ -657,5 +657,6 @@ Its good practise to add __typename to each level in the query. Update the query
     }
   }
 
-![__typename__](image.png)
+![image](https://github.com/user-attachments/assets/af5da9e2-9ed4-44ec-a08c-a27c5fd65731)
+
 
