@@ -11,10 +11,12 @@ for example
     
 ## 4.1. Authentication
 Go to the "Authorization" tab. Use "Bearer Token" as Auth Type, and paste the access_token into the "Token" text area.
+
 ![image](https://github.com/user-attachments/assets/990e1bf2-0c24-46e5-be1d-0d5f5770ac0e)
 
 ## 4.2. Headers
 Go to "Headers" tab. Add Content-Type as Key and application/json as Value
+
 ![image](https://github.com/user-attachments/assets/2a250130-ac2a-49dd-b6ef-b5ab0882afc5)
 
 ## 4.3. Body

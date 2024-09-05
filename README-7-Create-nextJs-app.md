@@ -5,6 +5,7 @@ The branch "step-1-nextjs-app-with-dependencies" contains the solution for this 
 
 ## 7.1. Start VS Code
 Open "Visual Studio Code" and open a folder, in which you will create the application 
+
 ![image](https://github.com/user-attachments/assets/899b65fa-d4a5-4d6c-8617-f93647cb9b07)
 
 ## 7.2. Open a terminal
@@ -12,22 +13,27 @@ Open "Visual Studio Code" and open a folder, in which you will create the applic
 
 ## 7.3. Create new NextJs app
 Write "npx create-next-app@latest" in the terminal and press enter
+
 ![image](https://github.com/user-attachments/assets/7fcd69ee-e3eb-40ad-9b5f-4866a950fc60)
 
 ## 7.4. Install packages
 Install any needed package
+
 ![image](https://github.com/user-attachments/assets/d6a0a9fb-b08b-489b-8da7-875d52276028)
 
 ## 7.5. Select name
 Select a name (next-js-app), click enter, and select the default selections for all coming questions
+
 ![image](https://github.com/user-attachments/assets/614f283f-10b3-48e8-8a02-c44d79b56a0f)
 
 ## 7.6. Go to correct folder
 Write "cd next-js-app" in the terminal to go to your application
+
 ![image](https://github.com/user-attachments/assets/ef2f2ef4-9563-4bf4-ad8a-deac691647fb)
 
 ## 7.7. Start the application
 Write "npm run dev" to start the application
+
 ![image](https://github.com/user-attachments/assets/a07a75a4-3c59-41cc-8037-b6b3ea52fc35)
 
 ## 7.8. Browse to the site

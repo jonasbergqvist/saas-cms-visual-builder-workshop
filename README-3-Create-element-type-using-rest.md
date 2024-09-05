@@ -11,10 +11,12 @@ for example
 
 ## 3.1. Authentication
 Go to the "Authorization" tab. Use "Bearer Token" as Auth Type, and paste the access_token into the "Token" text area.
+
 ![image](https://github.com/user-attachments/assets/385c3988-69a4-402e-b921-c7ac840924a6)
 
 ## 3.2. Headers
 Go to "Headers" tab. Add Content-Type as Key and application/json as Value
+
 ![image](https://github.com/user-attachments/assets/9e029390-78b5-4004-9419-753b4e481312)
 
 ## 3.3. Body
@@ -58,4 +60,5 @@ Use "raw" with "JSON" and paste the following into the text area
       }
 
 Push "Send" to execute the query. This will create the content-type in CMS.
+
 ![image](https://github.com/user-attachments/assets/7081f17d-6d97-4d3e-b4de-49d9f20cdfc9)

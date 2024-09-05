@@ -7,10 +7,12 @@ The branch "step-3-create-experience-component" contains the solution for this p
 
 ## 9.1. Create "components" folder
 Create a new folder under "src" called "components"
+
 ![image](https://github.com/user-attachments/assets/e9093d94-214f-4f37-be07-87eb629e8ccd)
 
 ## 9.2. Create "base" folder
 Create a folder under "components" called "base"
+
 ![image](https://github.com/user-attachments/assets/2432903f-758d-43ee-a081-ebf1c94f1d43)
 
 ## 9.3. Create "ExperienceComponent.tsx"
@@ -53,66 +55,71 @@ This implementation is far from done. But lets go through what we have so far
 Take the query that you created earlier (section "Create GraphQL query for the experience" and paste it into the ExperienceQuery. The ExperienceQuery should look like this
 
       export const ExperienceQuery = graphql(/* GraphQL */ `
-          query MyQuery($url: String, $version: String) {
-          _Experience(
-              where: { _metadata: { url: { default: { eq: $url } }, version: { eq: $version } } }
-          ) {
-              items {
-              _metadata { url {default hierarchical  internal base} }
-              composition {
-                  key
-                  nodeType
-                  nodes {
-                  key
-                  nodeType
-                  ... on CompositionStructureNode {
-                      nodes {
-                      key
-                      nodeType
-                      ... on CompositionStructureNode {
-                          nodes {
-                          key
-                          nodeType
-                          ... on CompositionStructureNode {
-                              nodes {
-                              key
-                              nodeType
-                              ... on CompositionElementNode {
-                                  element {
-                                  _metadata {
-                                      key
-                                      types
-                                  }
-                                  ... on SimpleElement {
-                                      TestProperty {
-                                      json
-                                      }
-                                  }
-                                  }
-                              }
-                              }
-                              displaySettings {
-                              key
-                              value
-                              }
-                          }
-                          }
-                          displaySettings {
-                          key
-                          value
-                          }
-                      }
-                      }
-                      displaySettings {
-                      key
-                      value
-                      }
-                  }
-                  }
-              }
-              }
-          }
-          }
+        query MyQuery($url: String, $version: String) {
+            _Experience(
+            where: { _metadata: { url: { default: { eq: $url } }, version: { eq: $version } } }
+            ) {
+            items {
+                composition {
+                    __typename
+                    key
+                    nodeType
+                    nodes {
+                        __typename
+                        key
+                        nodeType
+                        ... on CompositionStructureNode {
+                            nodes {
+                                __typename
+                                key
+                                nodeType
+                                ... on CompositionStructureNode {
+                                    nodes {
+                                        __typename
+                                        key
+                                        nodeType
+                                        ... on CompositionStructureNode {
+                                            nodes {
+                                                __typename
+                                                key
+                                                nodeType
+                                                ... on CompositionElementNode {
+                                                    element {
+                                                        __typename
+                                                        _metadata {
+                                                        key
+                                                        types
+                                                    }
+                                                    ... on SimpleElement {
+                                                        TestProperty {
+                                                            json
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        displaySettings {
+                                            key
+                                            value
+                                        }
+                                    }
+                                }
+                                displaySettings {
+                                    key
+                                    value
+                                }
+                            }
+                        }
+                        displaySettings {
+                            key
+                            value
+                        }
+                    }
+                }
+                }
+            }
+            }
+        }
       `)
 
 ![image](https://github.com/user-attachments/assets/f1e1b631-61df-4d29-bb5c-9ab43b64cea6)
@@ -225,80 +232,3 @@ Write "npm run dev" in a terminal
 Browse to [http://localhost:3000](http://localhost:3000)
 
 Nothing is shown, something is wrong.
-
-### 9.4.6 Add __typename
-Add __typename for CompositionStructureNode:s
-
-Open ExperienceComponent.tsx again, and go to the ExperienceQuery. Add __typename under each "CompositionStructureNode" and save the file
-
-      export const ExperienceQuery = graphql(/* GraphQL */ `
-          query Experience($url: String, $version: String) {
-          _Experience(
-              where: { _metadata: { url: { default: { eq: $url } }, version: { eq: $version } } }
-          ) {
-              items {
-              _metadata { url {default hierarchical  internal base} }
-              composition {
-                  key
-                  nodeType
-                  nodes {
-                  key
-                  nodeType
-                  ... on CompositionStructureNode {
-                      __typename
-                      nodes {
-                      key
-                      nodeType
-                      ... on CompositionStructureNode {
-                          __typename
-                          nodes {
-                          key
-                          nodeType
-                          ... on CompositionStructureNode {
-                              __typename
-                              nodes {
-                              key
-                              nodeType
-                              ... on CompositionElementNode {
-                                  __typename
-                                  element {
-                                  _metadata {
-                                      key
-                                      types
-                                  }
-                                  ... on SimpleElement {
-                                      TestProperty {
-                                      json
-                                      }
-                                  }
-                                  }
-                              }
-                              }
-                              displaySettings {
-                              key
-                              value
-                              }
-                          }
-                          }
-                          displaySettings {
-                          key
-                          value
-                          }
-                      }
-                      }
-                      displaySettings {
-                      key
-                      value
-                      }
-                  }
-                  }
-              }
-              }
-          }
-          }
-      `)
-
-![image](https://github.com/user-attachments/assets/0e78a960-34e8-44bb-9c7f-655f1da18c02)
-
-Save the file, and check the browser again. It should work now
-![image](https://github.com/user-attachments/assets/9cd15ac7-76e2-4453-a157-40a3088dc635)
