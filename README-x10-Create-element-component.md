@@ -8,10 +8,12 @@ The branch "step-4-create-simple-element-component" contains the solution for th
 
 ## 10.1 Create 'element' folder
 Create folder 'element' under 'components'
+
 ![image](https://github.com/user-attachments/assets/6b3c248a-eef7-4765-9e3e-27ceeb0e1381)
 
 ## 10.2 Create 'SimpleElementComponent.tsx'
 Create a new file named 'SimpleElementComponent.tsx' under 'element' folder
+
 ![image](https://github.com/user-attachments/assets/58fdadd4-9276-40be-a8f0-55ea6637f91c)
 
 ## 10.3 Add skeleton for SimpleElementComponent.tsx
@@ -41,6 +43,7 @@ The file will contain a partial query, called fragment. We will have to do a sma
 Update GraphQL query in SaaS CMS or in browser
 
 Go to the SaaS CMS and GrapiQL, or use the direct url to [GraphiQL](https://cg.optimizely.com/app/graphiql?auth=nSabkbOsWUA55R2YBSYvuGCOgfAnEqE5Zah5fTHsaKlm1kQi)
+
 ![image](https://github.com/user-attachments/assets/dd4805d0-edeb-4849-8cb9-a705ffae5d5b)
 
 ![image](https://github.com/user-attachments/assets/186879b8-747e-403d-9857-0740bd4ab15c)
@@ -126,6 +129,7 @@ Then change the main query, to reference the fragment
 ![image](https://github.com/user-attachments/assets/21da4d82-060b-4163-8f56-ca1be1ca67c0)
 
 Try to run the query, to see if you still get the same result
+
 ![image](https://github.com/user-attachments/assets/01ce4c99-f63d-48e9-88c2-d8638964648e)
 
 ## 10.5 Add fragment
