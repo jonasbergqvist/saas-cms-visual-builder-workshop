@@ -28,7 +28,9 @@ for example
 
     https://app-ocxcjobe11znb7p003.cms.optimizely.com/_cms/preview2/oauth/token.
 
-Add the following into the text area and change value for "client_id" and "client_secret" to the values you got in the CMS for "API Client".
+Open tab "Body" and select "raw" and then "JSON"
+
+Add the following into the text area, where you need to change value for "client_id" and "client_secret" to the values you got in the CMS for "API Client".
 
       {
         "grant_type": "client_credentials",
