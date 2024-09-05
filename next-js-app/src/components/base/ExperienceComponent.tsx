@@ -4,67 +4,71 @@ import { FC } from "react";
 import SimpleElementComponent from "../elements/SimpleElementComponent";
 
 export const ExperienceQuery = graphql(/* GraphQL */ `
-    query Experience($url: String, $version: String) {
+      query MyQuery($url: String, $version: String) {
     _Experience(
-        where: { _metadata: { url: { default: { eq: $url } }, version: { eq: $version } } }
+      where: { _metadata: { url: { default: { eq: $url } }, version: { eq: $version } } }
     ) {
-        items {
-        _metadata { url {default hierarchical  internal base} }
+      items {
         composition {
-            key
-            nodeType
-            nodes {
+          __typename
+          key
+          nodeType
+          nodes {
+            __typename
             key
             nodeType
             ... on CompositionStructureNode {
+              nodes {
                 __typename
-                nodes {
                 key
                 nodeType
                 ... on CompositionStructureNode {
+                  nodes {
                     __typename
-                    nodes {
                     key
                     nodeType
                     ... on CompositionStructureNode {
+                      nodes {
                         __typename
-                        nodes {
                         key
                         nodeType
                         ... on CompositionElementNode {
+                          element {
                             __typename
-                            element {
-                                __typename
-                                _metadata {
-                                    key
-                                    types
-                                }
-                                ... SimpleElement
+                            _metadata {
+                              key
+                              types
                             }
+                            ... on SimpleElement {
+                              TestProperty {
+                                json
+                              }
+                            }
+                          }
                         }
-                        }
-                        displaySettings {
+                      }
+                      displaySettings {
                         key
                         value
-                        }
+                      }
                     }
-                    }
-                    displaySettings {
+                  }
+                  displaySettings {
                     key
                     value
-                    }
+                  }
                 }
-                }
-                displaySettings {
+              }
+              displaySettings {
                 key
                 value
-                }
+              }
             }
-            }
+          }
         }
-        }
+      }
     }
-    }
+  }
 `)
 
 interface props {
