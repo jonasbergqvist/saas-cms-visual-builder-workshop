@@ -16,31 +16,31 @@ Write "npx create-next-app@latest" in the terminal and press enter
 
 ![image](https://github.com/user-attachments/assets/7fcd69ee-e3eb-40ad-9b5f-4866a950fc60)
 
-## 7.4. Install packages
+### 7.3.1. Install packages
 Install any needed package
 
 ![image](https://github.com/user-attachments/assets/d6a0a9fb-b08b-489b-8da7-875d52276028)
 
-## 7.5. Select name
+### 7.3.2. Select name
 Select a name (next-js-app), click enter, and select the default selections for all coming questions
 
 ![image](https://github.com/user-attachments/assets/614f283f-10b3-48e8-8a02-c44d79b56a0f)
 
-## 7.6. Go to correct folder
+## 7.4. Go to correct folder
 Write "cd next-js-app" in the terminal to go to your application
 
 ![image](https://github.com/user-attachments/assets/ef2f2ef4-9563-4bf4-ad8a-deac691647fb)
 
-## 7.7. Start the application
+## 7.5. Start the application
 Write "npm run dev" to start the application
 
 ![image](https://github.com/user-attachments/assets/a07a75a4-3c59-41cc-8037-b6b3ea52fc35)
 
-## 7.8. Browse to the site
+## 7.6. Browse to the site
 Browse to your application: [http://localhost:3000](http://localhost:3000/)
 ![image](https://github.com/user-attachments/assets/7f2f58e1-10f8-4ff5-9054-b32cc7ec95a4)
 
-## 7.9. Modify package.json
+## 7.7. Modify package.json
 Open file "package.json" and modify it. The file should look like this
 
       {
@@ -78,7 +78,7 @@ Open file "package.json" and modify it. The file should look like this
 
 Save the file after update.
 
-## 7.10. Install dependencies
+## 7.8. Install dependencies
 Stop the site and install packages
 
 Click somewhere in the terminal and press controll+c. Accept terminating batch job
