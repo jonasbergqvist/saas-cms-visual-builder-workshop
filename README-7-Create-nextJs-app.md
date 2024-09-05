@@ -35,7 +35,7 @@ Select a name (next-js-app), click enter, and select the default selections for 
 ## 7.4. Go to correct folder
 Write
 
-  cd next-js-app
+  `cd next-js-app`
   
 in the terminal to go to your application
 
