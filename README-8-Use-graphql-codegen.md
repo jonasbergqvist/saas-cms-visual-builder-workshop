@@ -102,7 +102,7 @@ Make sure to save the file
 ### 8.3.2 Create a TypeScript client
 Create a new file called
 
-      `optiGraphClient.tsx`
+      optiGraphClient.tsx
       
 in the "src" folder
 
