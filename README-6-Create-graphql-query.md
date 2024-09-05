@@ -587,3 +587,75 @@ Try executing the query to see if you get result. You will only get result if yo
 ![image](https://github.com/user-attachments/assets/fada88b9-948c-445b-bf26-be06e0e2ec41)
 
 ![image](https://github.com/user-attachments/assets/67d17479-fd35-4777-9858-b01f523b8174)
+
+## 6.22. Add __typename
+Its good practise to add __typename to each level in the query. Update the query to include __typename
+
+    query MyQuery($url: String, $version: String) {
+    _Experience(
+      where: { _metadata: { url: { default: { eq: $url } }, version: { eq: $version } } }
+    ) {
+      items {
+        composition {
+          __typename
+          key
+          nodeType
+          nodes {
+            __typename
+            key
+            nodeType
+            ... on CompositionStructureNode {
+              nodes {
+                __typename
+                key
+                nodeType
+                ... on CompositionStructureNode {
+                  nodes {
+                    __typename
+                    key
+                    nodeType
+                    ... on CompositionStructureNode {
+                      nodes {
+                        __typename
+                        key
+                        nodeType
+                        ... on CompositionElementNode {
+                          element {
+                            __typename
+                            _metadata {
+                              key
+                              types
+                            }
+                            ... on SimpleElement {
+                              TestProperty {
+                                json
+                              }
+                            }
+                          }
+                        }
+                      }
+                      displaySettings {
+                        key
+                        value
+                      }
+                    }
+                  }
+                  displaySettings {
+                    key
+                    value
+                  }
+                }
+              }
+              displaySettings {
+                key
+                value
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+![__typename__](image.png)
+

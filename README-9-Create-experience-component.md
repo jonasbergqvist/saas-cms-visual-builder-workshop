@@ -122,7 +122,7 @@ Take the query that you created earlier (section "Create GraphQL query for the e
         }
       `)
 
-![image](https://github.com/user-attachments/assets/f1e1b631-61df-4d29-bb5c-9ab43b64cea6)
+![experience_query](image-1.png)
 
 ### 9.4.2 Verify query
 Verify that ExperienceQuery is working
