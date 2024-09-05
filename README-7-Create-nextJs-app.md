@@ -81,7 +81,8 @@ Add the following packages under "scripts":
       "codegen": "graphql-codegen --watch",
   `
 
-The file should look like this
+### 7.7.4. Final package.json
+The file should look similar to this (versions might differ)
 
       {
         "name": "next-js-app",
