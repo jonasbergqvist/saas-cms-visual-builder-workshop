@@ -100,7 +100,11 @@ Add the singleKey at the end of the value. This is how the example account will 
 Make sure to save the file
 
 ### 8.3.2 Create a TypeScript client
-Create a new file called optiGraphClient.tsx in the "src" folder
+Create a new file called
+
+      `optiGraphClient.tsx`
+      
+in the "src" folder
 
 ![image](https://github.com/user-attachments/assets/dc8bfea9-8e77-4c29-936a-8a3e1bc281d6)
 
@@ -122,4 +126,4 @@ Make sure you are in the correct folder (next-js-app) and run the following
 
       npm run build
 
-You will now get an error when trying to build the application. This is because we haven't added any GraphQL queries yet.
+You will now get an error when trying to build the application. This is because we haven't added any GraphQL queries yet. We will fix this in the next section.
