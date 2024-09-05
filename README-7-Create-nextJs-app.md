@@ -30,6 +30,8 @@ Select a name (next-js-app), click enter, and select the default selections for 
 
 ![image](https://github.com/user-attachments/assets/614f283f-10b3-48e8-8a02-c44d79b56a0f)
 
+![image](https://github.com/user-attachments/assets/bbdfb5f4-641c-46c5-9d32-4fd471130947)
+
 ## 7.4. Go to correct folder
 Write
 
