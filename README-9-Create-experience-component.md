@@ -17,6 +17,7 @@ Create a folder under "components" called "base"
 
 ## 9.3. Create "ExperienceComponent.tsx"
 Create a new file under "base" folder called "ExperienceComponent.tsx"
+
 ![image](https://github.com/user-attachments/assets/09e264ab-7837-42df-b23e-f01b0035b3e6)
 
 ## 9.4. Add skeleton for ExperienceComponent.tsx
