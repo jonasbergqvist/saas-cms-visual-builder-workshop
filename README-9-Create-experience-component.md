@@ -374,7 +374,7 @@ But lets see if we can get the "Not Implemented exception" in the website before
 
 Write "npm run dev" in a terminal
 
-      `npm run dev`
+      npm run dev
 
 ![image](https://github.com/user-attachments/assets/36286a01-f755-4679-9ceb-33e71c1ad804)
 
