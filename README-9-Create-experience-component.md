@@ -208,6 +208,18 @@ Open page.tsx under src/app and replace all HTML with the following:
       <ExperienceComponent url={null} version={null} />
     </main>
 
+The page.tsx should look like the following now:
+
+    import ExperienceComponent from "@/components/base/ExperienceComponent";
+
+    export default function Home() {
+    return (
+        <main className="flex min-h-screen flex-col items-center justify-between p-24">
+        <ExperienceComponent url={null} version={null} />
+        </main>
+    );
+    }
+
 ![image](https://github.com/user-attachments/assets/d1fddbcb-5462-4003-97fc-bb76c8cc1a94)
 
 Save the file
@@ -220,7 +232,8 @@ The implementation is not done yet, because we are only looping through all sect
 But lets see if we can get the "Not Implemented exception" in the website before moving on.
 
 Write "npm run dev" in a terminal
-      npm run dev
+
+      `npm run dev`
 
 ![image](https://github.com/user-attachments/assets/36286a01-f755-4679-9ceb-33e71c1ad804)
 
