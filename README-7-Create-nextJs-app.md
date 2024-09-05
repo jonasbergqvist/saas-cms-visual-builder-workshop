@@ -14,7 +14,7 @@ Open "Visual Studio Code" and open a folder, in which you will create the applic
 ## 7.3. Create new NextJs app
 Write 
 
-  npx create-next-app@latest
+  `npx create-next-app@latest`
   
 in the terminal and press enter
 
@@ -44,7 +44,7 @@ in the terminal to go to your application
 ## 7.5. Start the application
 Write
 
-  npm run dev
+  `npm run dev`
   
 to start the application
 
