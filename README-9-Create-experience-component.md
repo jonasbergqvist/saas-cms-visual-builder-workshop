@@ -232,4 +232,4 @@ Write "npm run dev" in a terminal
 
 Browse to [http://localhost:3000](http://localhost:3000)
 
-Nothing is shown, something is wrong.
+You should now see a "Not implemented exception" message, because that is what we have as output when finding an element. We will fix this in the next section.
