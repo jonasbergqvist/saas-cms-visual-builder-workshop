@@ -12,7 +12,11 @@ Open "Visual Studio Code" and open a folder, in which you will create the applic
 ![image](https://github.com/user-attachments/assets/f47cfd81-834e-4454-b203-45fc4ed4c396)
 
 ## 7.3. Create new NextJs app
-Write "npx create-next-app@latest" in the terminal and press enter
+Write 
+
+  npx create-next-app@latest
+  
+in the terminal and press enter
 
 ![image](https://github.com/user-attachments/assets/7fcd69ee-e3eb-40ad-9b5f-4866a950fc60)
 
@@ -27,12 +31,20 @@ Select a name (next-js-app), click enter, and select the default selections for 
 ![image](https://github.com/user-attachments/assets/614f283f-10b3-48e8-8a02-c44d79b56a0f)
 
 ## 7.4. Go to correct folder
-Write "cd next-js-app" in the terminal to go to your application
+Write
+
+  cd next-js-app
+  
+in the terminal to go to your application
 
 ![image](https://github.com/user-attachments/assets/ef2f2ef4-9563-4bf4-ad8a-deac691647fb)
 
 ## 7.5. Start the application
-Write "npm run dev" to start the application
+Write
+
+  npm run dev
+  
+to start the application
 
 ![image](https://github.com/user-attachments/assets/a07a75a4-3c59-41cc-8037-b6b3ea52fc35)
 
@@ -82,10 +94,13 @@ Save the file after update.
 Stop the site and install packages
 
 Click somewhere in the terminal and press controll+c. Accept terminating batch job
+
 ![image](https://github.com/user-attachments/assets/513e0a65-c6c0-4d6a-ad0f-453855c8b0e5)
 
 Write "npm install" and click enter to install all needed dependencies
+
 ![image](https://github.com/user-attachments/assets/ddea1530-f07b-49ce-ae8f-4e9aa7a3c7b0)
 
 Test the application by writing "npm run build" and press enter
+
 ![image](https://github.com/user-attachments/assets/45e719c0-5932-41c1-998f-4addba2ccbec)
