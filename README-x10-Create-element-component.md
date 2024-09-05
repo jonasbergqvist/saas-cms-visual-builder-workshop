@@ -61,6 +61,19 @@ Write the following at the top of the query window
 
 Then change the main query, to reference the fragment
 
+    ...
+        element {
+            __typename
+            _metadata {
+                key
+                    types
+                }
+            ... SimpleElement
+        }
+    ...
+
+The full query should now look like this
+
       fragment SimpleElement on SimpleElement
       {
         TestProperty {
@@ -132,9 +145,7 @@ Try to run the query, to see if you still get the same result
 
 ![image](https://github.com/user-attachments/assets/01ce4c99-f63d-48e9-88c2-d8638964648e)
 
-## 10.5 Add fragment
-Add fragment to 'SimpleElementComponent.tsx'
-
+## 10.5 Update 'SimpleElementFragment
 Update 'SimpleElementFragment' in 'SimpleElementComponent.tsx' to look like this
 
       export const SimpleElementFragment = graphql(/* GraphQL */ `
