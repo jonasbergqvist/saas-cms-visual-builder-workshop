@@ -130,12 +130,6 @@ Verify that ExperienceQuery is working
 
 Save the ExperienceComponent.tsx after the change, and wait a couple of seconds. GraphQL codegen is validating the query and updates the auto-generated types after verification.
 
-It should be possible to build the project now. Verify that by runnin "npm run build" in a terminal
-
-      npm run build
-
-![image](https://github.com/user-attachments/assets/244be7d8-012b-4e8d-aafe-e8596d49e2fd)
-
 ### 9.4.3 Add sections, rows, and columns
 Update ExperienceComponent to loop through sections, rows, and columns
 
