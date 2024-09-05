@@ -30,6 +30,8 @@ for example
 
 Open tab "Body" and select "raw" and then "JSON"
 
+![image](https://github.com/user-attachments/assets/51392bf5-1ac0-4e1c-852a-686f78eadc9b)
+
 Add the following into the text area, where you need to change value for "client_id" and "client_secret" to the values you got in the CMS for "API Client".
 
       {
