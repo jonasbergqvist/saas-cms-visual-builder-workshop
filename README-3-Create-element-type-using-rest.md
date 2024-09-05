@@ -62,3 +62,7 @@ Use "raw" with "JSON" and paste the following into the text area
 Push "Send" to execute the query. This will create the content-type in CMS.
 
 ![image](https://github.com/user-attachments/assets/7081f17d-6d97-4d3e-b4de-49d9f20cdfc9)
+
+## 3.4. Verify the element in CMS
+Go to 'Settings' -> 'Content Types' in CMS, and verify that a new element called 'SimpleElement' has been created. Check if you missed to set the request to "POST" in Postman, in case no element exist in CMS.
+
