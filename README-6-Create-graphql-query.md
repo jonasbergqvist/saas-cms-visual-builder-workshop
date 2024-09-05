@@ -24,7 +24,7 @@ Click on the folder icon to open "Explorer" view
 ![image](https://github.com/user-attachments/assets/698f81e1-85d1-4a5d-80f7-fa4d1eab5316)
 
 ## 6.3. Inspect types
-Check the types in the schema
+Check the types in the schema. There are more types in this screenshot than you will have. Make sure you have one type named "_Experience".
 
 ![image](https://github.com/user-attachments/assets/a9469cc4-ceed-455e-bc58-4e5bb2fee3fa)
 
