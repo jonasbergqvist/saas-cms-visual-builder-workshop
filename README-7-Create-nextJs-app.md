@@ -122,14 +122,26 @@ Save the file after update.
 ## 7.8. Install dependencies
 Stop the site and install packages
 
-Click somewhere in the terminal and press controll+c. Accept terminating batch job
+Click somewhere in the terminal and press
+
+  `controll+c`
+  
+Accept terminating batch job
 
 ![image](https://github.com/user-attachments/assets/513e0a65-c6c0-4d6a-ad0f-453855c8b0e5)
 
-Write "npm install" and click enter to install all needed dependencies
+Write
+
+  `npm install`
+  
+and click enter to install all needed dependencies
 
 ![image](https://github.com/user-attachments/assets/ddea1530-f07b-49ce-ae8f-4e9aa7a3c7b0)
 
-Test the application by writing "npm run build" and press enter
+Test the application by writing
+
+  `npm run build`
+  
+and press enter
 
 ![image](https://github.com/user-attachments/assets/45e719c0-5932-41c1-998f-4addba2ccbec)
