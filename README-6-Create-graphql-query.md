@@ -657,6 +657,7 @@ Its good practise to add __typename to each level in the query. Update the query
     }
   }
 
-![image](https://github.com/user-attachments/assets/af5da9e2-9ed4-44ec-a08c-a27c5fd65731)
+![image](https://github.com/user-attachments/assets/000c8fa5-057e-416b-af16-b14fd4a43312)
+
 
 
