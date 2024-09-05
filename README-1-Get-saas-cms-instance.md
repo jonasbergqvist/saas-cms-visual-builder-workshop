@@ -1,0 +1,2 @@
+# 1. Get a SaaS CMS Instance from Optimizely
+Visual Builder is part of CMS 13, which only exist for SaaS CMS at the moment. CMS 13 will be released later for PaaS CMS. You will have to reach out to Optimizely to get a SaaS CMS instance to be able to use Visual Builder in this guide.
