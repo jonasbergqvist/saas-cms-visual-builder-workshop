@@ -1,6 +1,10 @@
 # 8. Use GraphQL Codegen in NextJs app
 We are going to use [GraphQL Codegen](https://the-guild.dev/graphql/codegen/plugins/presets/preset-client) to auto-generate TypeScript types and GraphQL requsts
 
+You can use the branch "The branch "step-1-nextjs-app-with-dependencies" as a starting point for this part, if you haven't completed part 7.
+
+The branch "step-2-graphql-codegen" contains the solution for this part (8).
+
 ## 8.1. Create "codegen.ts"
 Create a new file in the root of the next-js-app named "codegen.ts"
 ![image](https://github.com/user-attachments/assets/511fd47a-416e-4a5f-a4b2-d4e04ae7fd8a)
@@ -48,9 +52,12 @@ The codegen.ts should look like this for the example account
 
 Make sure to save the file.
 
-## 8.2. Run GraphQL Codegen in a new terminal
+## 8.2. Run GraphQL Codegen
+Run GraphQL Codegen in a new terminal
 
-### 8.2.1 Create new terminal and make sure you are in correct folder
+### 8.2.1 Create new terminal
+Create new terminal and make sure you are in correct folder
+
 Click on + in the terminal to add a new terminal
 ![image](https://github.com/user-attachments/assets/a1a38fa8-e77e-458a-9bc5-125285e24040)
 

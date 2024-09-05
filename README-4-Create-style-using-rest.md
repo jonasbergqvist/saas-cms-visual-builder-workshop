@@ -1,8 +1,14 @@
 # 4. Create style using REST API
 Styles can be created using REST APIs, which editors can select in Visual Builder when creating experiances. We will create a simple style on section level.
 
-Use POST with url {your-cms-path}/_cms/preview2/displaytemplates for example https://app-ocxcjobe11znb7p003.cms.optimizely.com/_cms/preview2/displaytemplates. Add the following into the text area and change value for "client_id" and "client_secret" to the values you got in the CMS for "API Client" (see Add a value in "Client ID and click "Create")
+Use POST with url
 
+    {your-cms-path}/_cms/preview2/displaytemplates
+    
+for example
+
+    https://app-ocxcjobe11znb7p003.cms.optimizely.com/_cms/preview2/displaytemplates
+    
 ## 4.1. Authentication
 Go to the "Authorization" tab. Use "Bearer Token" as Auth Type, and paste the access_token into the "Token" text area.
 ![image](https://github.com/user-attachments/assets/990e1bf2-0c24-46e5-be1d-0d5f5770ac0e)

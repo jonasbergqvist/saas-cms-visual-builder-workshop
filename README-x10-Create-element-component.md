@@ -1,13 +1,20 @@
 # 10. Add SimpleElementComponent
 Each element that we create should have one React component in out application. We only have one element right now, so we will only create one more component named 'SimpleElementComponent.tsx"
 
-## 10.1 Create folder 'element' under 'components'
+You can use the branch the branch "step-3-create-experience-component" as a starting point for this part, if you haven't completed part 9.
+
+The branch "step-4-create-simple-element-component" contains the solution for this part (10).
+
+
+## 10.1 Create 'element' folder
+Create folder 'element' under 'components'
 ![image](https://github.com/user-attachments/assets/6b3c248a-eef7-4765-9e3e-27ceeb0e1381)
 
-## 10.2 Create a new file named 'SimpleElementComponent.tsx' under 'element' folder
+## 10.2 Create 'SimpleElementComponent.tsx'
+Create a new file named 'SimpleElementComponent.tsx' under 'element' folder
 ![image](https://github.com/user-attachments/assets/58fdadd4-9276-40be-a8f0-55ea6637f91c)
 
-## 10.3 Add skeleton into SimpleElementComponent.tsx
+## 10.3 Add skeleton for SimpleElementComponent.tsx
 
       import { FragmentType, useFragment, graphql } from '@/graphql'
        
@@ -30,7 +37,9 @@ Each element that we create should have one React component in out application. 
 
 The file will contain a partial query, called fragment. We will have to do a small modification of our 'Experience' query to seperate the 'SimpleElement' part into a fragment.
 
-## 10.4 Update GraphQL query in SaaS CMS or in browser
+## 10.4 Update GraphQL query
+Update GraphQL query in SaaS CMS or in browser
+
 Go to the SaaS CMS and GrapiQL, or use the direct url to [GraphiQL](https://cg.optimizely.com/app/graphiql?auth=nSabkbOsWUA55R2YBSYvuGCOgfAnEqE5Zah5fTHsaKlm1kQi)
 ![image](https://github.com/user-attachments/assets/dd4805d0-edeb-4849-8cb9-a705ffae5d5b)
 
@@ -119,7 +128,9 @@ Then change the main query, to reference the fragment
 Try to run the query, to see if you still get the same result
 ![image](https://github.com/user-attachments/assets/01ce4c99-f63d-48e9-88c2-d8638964648e)
 
-## 10.5 Add fragment to 'SimpleElementComponent.tsx'
+## 10.5 Add fragment
+Add fragment to 'SimpleElementComponent.tsx'
+
 Update 'SimpleElementFragment' in 'SimpleElementComponent.tsx' to look like this
 
       export const SimpleElementFragment = graphql(/* GraphQL */ `
@@ -135,7 +146,9 @@ Update 'SimpleElementFragment' in 'SimpleElementComponent.tsx' to look like this
 
 Make sure you save the file
 
-## 10.6 Update the Html in 'SimpleElementComponent'
+## 10.6 Update the Html
+Update the Html in 'SimpleElementComponent'
+
 Update the HTML to look like this
 
       const SimpleElementComponent = (props: {
@@ -151,7 +164,9 @@ Update the HTML to look like this
 
 Save the file
 
-## 10.7 Update 'ExperienceComponent.tsx' to reference fragment
+## 10.7 Update 'ExperienceComponent.tsx'
+Update 'ExperienceComponent.tsx' to reference fragment
+
 Upen 'ExperienceComponent.tsx' and do the same change of the query that you did in 'Update GraphQL query in SaaS CMS or in browser'
      
       export const ExperienceQuery = graphql(/* GraphQL */ `
@@ -220,7 +235,9 @@ Upen 'ExperienceComponent.tsx' and do the same change of the query that you did 
 
 ![image](https://github.com/user-attachments/assets/41587454-7fc6-42b4-bd2a-413f4b51c34f)
 
-## 10.8 Update HTML to use 'SimpleElementComponent'
+## 10.8 Update HTML
+Update HTML to use 'SimpleElementComponent'
+
 Update the switch to look like the following
 
     switch(node?.element?.__typename)
@@ -374,12 +391,16 @@ The 'ExperienceComponent.tsx' should now look like:
 
 Save the file.
 
-## 10.9 Try the application in a browser
+## 10.9 Try the application
+Try the application in a browser
+
 Go to [http://localhost:3000/](http://localhost:3000/) and check the result
 
 ![image](https://github.com/user-attachments/assets/68c4c819-9b48-45ca-a227-e8a727d08663)
 
-## 10.10 Update 'element.TestProperty?.json' to 'element.TestProperty?.html'
+## 10.10 Update TestProperty
+Update 'element.TestProperty?.json' to 'element.TestProperty?.html'
+
 The 'element.TestProperty?.json' can't be handled directly. Lets make a simple change to use html from the XhtmlString instead
 
       import { FragmentType, useFragment, graphql } from '@/graphql'
@@ -437,7 +458,9 @@ Save the file, and check the result
 
 ![image](https://github.com/user-attachments/assets/c769ea0d-f036-4a93-a7c4-041fe66b04a8)
 
-## 10.11 Update grid in ExperienceComponent.tsx, to handle styles
+## 10.11 Handle styles
+Update grid in ExperienceComponent.tsx, to handle styles
+
 Open ExperienceComponent.tsx and add the following function
 
     function getGridClassName(displaySettings: CompositionDisplaySetting[]): string {

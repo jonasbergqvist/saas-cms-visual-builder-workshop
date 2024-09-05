@@ -1,13 +1,20 @@
 # 9. Create Experience components in NextJs app
 We will now create React components in the application, which will render experiences
 
-## 9.1. Create a new folder under "src" called "components"
+You can use the branch the branch "step-2-graphql-codegen" as a starting point for this part, if you haven't completed part 8.
+
+The branch "step-3-create-experience-component" contains the solution for this part (9).
+
+## 9.1. Create "components" folder
+Create a new folder under "src" called "components"
 ![image](https://github.com/user-attachments/assets/e9093d94-214f-4f37-be07-87eb629e8ccd)
 
-## 9.2. Create a folder under "components" called "base"
+## 9.2. Create "base" folder
+Create a folder under "components" called "base"
 ![image](https://github.com/user-attachments/assets/2432903f-758d-43ee-a081-ebf1c94f1d43)
 
-## 9.3. Create a new file under "base" folder called "ExperienceComponent.tsx"
+## 9.3. Create "ExperienceComponent.tsx"
+Create a new file under "base" folder called "ExperienceComponent.tsx"
 ![image](https://github.com/user-attachments/assets/09e264ab-7837-42df-b23e-f01b0035b3e6)
 
 ## 9.4. Add skeleton for ExperienceComponent.tsx
@@ -110,7 +117,9 @@ Take the query that you created earlier (section "Create GraphQL query for the e
 
 ![image](https://github.com/user-attachments/assets/f1e1b631-61df-4d29-bb5c-9ab43b64cea6)
 
-### 9.4.2 Verify that ExperienceQuery is working
+### 9.4.2 Verify query
+Verify that ExperienceQuery is working
+
 Save the ExperienceComponent.tsx after the change, and wait a couple of seconds. GraphQL codegen is validating the query and updates the auto-generated types after verification.
 
 It should be possible to build the project now. Verify that by runnin "npm run build" in a terminal
@@ -119,7 +128,9 @@ It should be possible to build the project now. Verify that by runnin "npm run b
 
 ![image](https://github.com/user-attachments/assets/244be7d8-012b-4e8d-aafe-e8596d49e2fd)
 
-### 9.4.3 Update ExperienceComponent to loop through sections, rows, and columns
+### 9.4.3 Add sections, rows, and columns
+Update ExperienceComponent to loop through sections, rows, and columns
+
 We can now use the data from Graph in our component. Lets hover over "data" constant, to see what we get from Graph
 ![image](https://github.com/user-attachments/assets/3a503cfe-0d42-4cdc-8b5f-526f2c6dd4b8)
 
@@ -186,7 +197,9 @@ Replace the html (<></>) with the following:
 
 ![image](https://github.com/user-attachments/assets/c4895e4d-7e76-4d0b-b099-57201e1d5c53)
 
-### 9.4.4 Replace the default NexJs HTML with the ExperienceComponent
+### 9.4.4 Use ExperienceComponent
+Replace the default NexJs HTML with the ExperienceComponent
+
 Open page.tsx under src/app and replace all HTML with the following:
 
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
@@ -197,7 +210,9 @@ Open page.tsx under src/app and replace all HTML with the following:
 
 Save the file
 
-### 9.4.5 Try the application in a browser
+### 9.4.5 Test application
+Try the application in a browser
+
 The implementation is not done yet, because we are only looping through all sections, rows, and columns, to finally write a "Not implemented exception" for each element.
 
 But lets see if we can get the "Not Implemented exception" in the website before moving on.
@@ -211,7 +226,9 @@ Browse to [http://localhost:3000](http://localhost:3000)
 
 Nothing is shown, something is wrong.
 
-### 9.4.6 Add __typename for CompositionStructureNode:s
+### 9.4.6 Add __typename
+Add __typename for CompositionStructureNode:s
+
 Open ExperienceComponent.tsx again, and go to the ExperienceQuery. Add __typename under each "CompositionStructureNode" and save the file
 
       export const ExperienceQuery = graphql(/* GraphQL */ `
