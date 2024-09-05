@@ -55,7 +55,33 @@ Browse to your application: [http://localhost:3000](http://localhost:3000/)
 ![image](https://github.com/user-attachments/assets/7f2f58e1-10f8-4ff5-9054-b32cc7ec95a4)
 
 ## 7.7. Modify package.json
-Open file "package.json" and modify it. The file should look like this
+Open file "package.json" do the following modifications. 
+
+### 7.7.1. Update devDependencies
+Add the following packages under "devDependencies":
+
+  `
+      "@graphql-codegen/cli": "^5.0.2",
+      "@graphql-codegen/client-preset": "^4.3.3",
+      "@parcel/watcher": "^2.4.1",
+  `
+
+### 7.7.2. Update dependencies
+Add the following packages under "dependencies":
+
+  `
+      "graphql": "^16.9.0",
+      "html-react-parser": "^5.1.12",
+  `
+
+### 7.7.3. Update scripts
+Add the following packages under "scripts":
+
+  `
+      "codegen": "graphql-codegen --watch",
+  `
+
+The file should look like this
 
       {
         "name": "next-js-app",
