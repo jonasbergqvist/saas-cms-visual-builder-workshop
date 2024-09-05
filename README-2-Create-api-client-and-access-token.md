@@ -16,7 +16,9 @@ A value will now be shown in the "Client secret" textbox. Copy both the "Client 
 ![image](https://github.com/user-attachments/assets/0bfc8c67-1d5a-4f7e-9ffb-d688077099d7)
 
 ## 2.3. Create access token
-Create access token using Client ID and secret
+Create access token using Client ID and secret.
+
+We are going to use [Postman](https://www.postman.com/downloads/) in this example, but you can use any tool of choose.
 
 Use POST with url 
 
