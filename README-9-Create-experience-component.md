@@ -56,65 +56,70 @@ This implementation is far from done. But lets go through what we have so far
 Take the query that you created earlier (section "Create GraphQL query for the experience" and paste it into the ExperienceQuery. The ExperienceQuery should look like this
 
       export const ExperienceQuery = graphql(/* GraphQL */ `
-          query MyQuery($url: String, $version: String) {
-          _Experience(
+          query Experience($url: String, $version: String) {
+              _Experience(
               where: { _metadata: { url: { default: { eq: $url } }, version: { eq: $version } } }
-          ) {
+              ) {
               items {
-              _metadata { url {default hierarchical  internal base} }
-              composition {
-                  key
-                  nodeType
-                  nodes {
-                  key
-                  nodeType
-                  ... on CompositionStructureNode {
+                  composition {
                       __typename
-                      nodes {
                       key
                       nodeType
-                      ... on CompositionStructureNode {
+                      nodes {
                           __typename
-                          nodes {
                           key
                           nodeType
                           ... on CompositionStructureNode {
-                              __typename
                               nodes {
-                              key
-                              nodeType
-                              ... on CompositionElementNode {
                                   __typename
-                                  element {
-                                      __typename
-                                      _metadata {
+                                  key
+                                  nodeType
+                                  ... on CompositionStructureNode {
+                                      nodes {
+                                          __typename
                                           key
-                                          types
+                                          nodeType
+                                          ... on CompositionStructureNode {
+                                              nodes {
+                                                  __typename
+                                                  key
+                                                  nodeType
+                                                  ... on CompositionElementNode {
+                                                      element {
+                                                          __typename
+                                                          _metadata {
+                                                          key
+                                                          types
+                                                      }
+                                                      ... on SimpleElement {
+                                                          TestProperty {
+                                                              json
+                                                          }
+                                                      }
+                                                  }
+                                              }
+                                          }
+                                          displaySettings {
+                                              key
+                                              value
+                                          }
                                       }
                                   }
+                                  displaySettings {
+                                      key
+                                      value
+                                  }
                               }
-                              }
-                              displaySettings {
-                              key
-                              value
-                              }
-                          }
                           }
                           displaySettings {
-                          key
-                          value
+                              key
+                              value
                           }
                       }
-                      }
-                      displaySettings {
-                      key
-                      value
-                      }
                   }
                   }
               }
               }
-          }
           }
       `)
 
