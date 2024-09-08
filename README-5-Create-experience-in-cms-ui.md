@@ -60,7 +60,7 @@ Select "Primary" color schema and check "Higlighted"
 Click the publish button in CMS to publish the experience
 
 ## 5.13. Set your experience in CMS as the start page
-We will registrate an application, and set the start page to our experience
+We will register an application, and set the start page to our experience
 
 ### 5.13.1. Go to Applications under "Settings"
 ![image](https://github.com/user-attachments/assets/7be69a8d-99bb-4adc-8632-b57f1b2f6b46)
