@@ -42,8 +42,8 @@ Add the following into the text area, where you need to change value for "client
         "client_secret": "{your client_secret}"
       }
 
-Push "Send" to execute the request, and look at the response in the bottom. Copy the value for "access_token" and paste it somewhere temporarly, for example in notepad.
+Push "Send" to execute the request, and look at the response in the bottom. Copy the value for "access_token" and paste it somewhere temporary, for example in notepad.
 
 ![image](https://github.com/user-attachments/assets/0b330405-c164-4655-987c-6c09a1882111)
 
-We can create new content-types in CMS when we have an access token. The access token will only be valid for 300 seconds, so you have to create a new token after 300 seconds to continue using the REST API (see "Create access token using Client ID and secret")
+We can create new content-types in CMS when we have an access token. The access token will only be valid for 300 seconds, so you must create a new token after 300 seconds to continue using the REST API (see "Create access token using Client ID and secret")
