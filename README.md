@@ -34,4 +34,6 @@ This section will go through how to add a generic experience component to a Next
 This section will go through how to create an element component in a NextJs app, and how to reference it from the experience component.
 
 ## 11. Next step
-Look into the [Optimizely SaaS starter](https://github.com/remkoj/optimizely-saas-starter) to get things like "preview mode", deployment to Vercel etz.
+First look into the [cms-visual-builder-hello-world](https://github.com/episerver/cms-visual-builder-hello-world) repository, to add preview functionality.
+
+The final step will be to use the [Optimizely SaaS starter](https://github.com/remkoj/optimizely-saas-starter) with all functionality you can think of.
