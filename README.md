@@ -4,7 +4,7 @@ This repository will guide you in creating a NextJs app, where Visual Builder in
 This repository has been created for people that wants to learn how to create a website with Visual Builder.
 
 ## 1. [Get a SaaS CMS Instance from Optimizely](https://github.com/jonasbergqvist/saas-cms-visual-builder-workshop/blob/main/README-1-Get-saas-cms-instance.md)
-You will be able to build a website using NextJs based on SaaS CMS, even if you don't have your own CMS instance. You can basically use the following Graph account: https://cg.optimizely.com/app/graphiql?auth=uoEeuKqiLQst3PVLfopLFkqESLlgXERvm0uvAVYSjjNMJPqi and start from [section 6](https://github.com/jonasbergqvist/saas-cms-visual-builder-workshop/blob/main/README-6-Create-graphql-query.md)
+You will be able to build a website using NextJs based on SaaS CMS, even if you don't have your own CMS instance. You can basically use the following Graph account: [uoEeuKqiLQst3PVLfopLFkqESLlgXERvm0uvAVYSjjNMJPqi](https://cg.optimizely.com/app/graphiql?auth=uoEeuKqiLQst3PVLfopLFkqESLlgXERvm0uvAVYSjjNMJPqi) and start from [section 6](https://github.com/jonasbergqvist/saas-cms-visual-builder-workshop/blob/main/README-6-Create-graphql-query.md)
 
 ## 2. [Create API Client in SaaS CMS](https://github.com/jonasbergqvist/saas-cms-visual-builder-workshop/blob/main/README-2-Create-api-client-and-access-token.md)
 This section will go through how to create an access token for ingesting content types and styles to CMS
