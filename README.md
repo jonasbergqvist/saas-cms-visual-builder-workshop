@@ -4,7 +4,7 @@ This repository will guide you in creating a NextJs app, where Visual Builder in
 This repository has been created for people that wants to learn how to create a website with Visual Builder.
 
 ## 1. [Get a SaaS CMS Instance from Optimizely](https://github.com/jonasbergqvist/saas-cms-visual-builder-workshop/blob/main/README-1-Get-saas-cms-instance.md)
-You can start at section "5. Create Experience in CMS UI" in case you don't have a SaaS CMS instance. But feel free to go through the first sections to understand all parts, even if you don't have your own SaaS CMS instance.
+You will be able to build a website using NextJs based on SaaS CMS, even if you don't have your own CMS instance. You can basically use the following Graph account: https://cg.optimizely.com/app/graphiql?auth=uoEeuKqiLQst3PVLfopLFkqESLlgXERvm0uvAVYSjjNMJPqi and start from section 6
 
 ## 2. [Create API Client in SaaS CMS](https://github.com/jonasbergqvist/saas-cms-visual-builder-workshop/blob/main/README-2-Create-api-client-and-access-token.md)
 This section will go through how to create an access token for ingesting content types and styles to CMS
