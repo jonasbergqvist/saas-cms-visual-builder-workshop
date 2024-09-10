@@ -56,7 +56,7 @@ This implementation is far from done. But lets go through what we have so far
 Take the query that you created earlier (section "Create GraphQL query for the experience" and paste it into the ExperienceQuery. The ExperienceQuery should look like this
 
       export const ExperienceQuery = graphql(/* GraphQL */ `
-          query Experience($url: String, $version: String) {
+          query MyQuery($url: String, $version: String) {
               _Experience(
               where: { _metadata: { url: { default: { eq: $url } }, version: { eq: $version } } }
               ) {
