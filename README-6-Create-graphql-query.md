@@ -12,9 +12,9 @@ You can also browse to
     
 to get the same GraphiQL UI. We have an example site that can be used if you don't have your own SaaS CMS with key
 
-    nSabkbOsWUA55R2YBSYvuGCOgfAnEqE5Zah5fTHsaKlm1kQi
+    uoEeuKqiLQst3PVLfopLFkqESLlgXERvm0uvAVYSjjNMJPqi
     
-Browse to url [https://cg.optimizely.com/app/graphiql?auth=nSabkbOsWUA55R2YBSYvuGCOgfAnEqE5Zah5fTHsaKlm1kQi](https://cg.optimizely.com/app/graphiql?auth=nSabkbOsWUA55R2YBSYvuGCOgfAnEqE5Zah5fTHsaKlm1kQi) to use that account.
+Browse to url [https://cg.optimizely.com/app/graphiql?auth=uoEeuKqiLQst3PVLfopLFkqESLlgXERvm0uvAVYSjjNMJPqi](https://cg.optimizely.com/app/graphiql?auth=uoEeuKqiLQst3PVLfopLFkqESLlgXERvm0uvAVYSjjNMJPqi) to use that account.
 
 ![image](https://github.com/user-attachments/assets/4d8bc380-59d2-4b77-bc16-e6fb84fe8221)
 
