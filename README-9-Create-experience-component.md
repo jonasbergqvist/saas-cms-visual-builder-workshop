@@ -202,31 +202,6 @@ This code will loop through every section. In every section it will loop through
 
 ![image](https://github.com/user-attachments/assets/780681ae-103c-48a8-82b7-533bbc19356a)
 
-### 9.4.4 Use ExperienceComponent
-Replace the default NexJs HTML with the ExperienceComponent
-
-Open page.tsx under src/app and replace all HTML with the following:
-
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <ExperienceComponent url={null} version={null} />
-    </main>
-
-The page.tsx should look like the following now:
-
-    import ExperienceComponent from "@/components/base/ExperienceComponent";
-
-    export default function Home() {
-    return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
-        <ExperienceComponent url={null} version={null} />
-        </main>
-    );
-    }
-
-![image](https://github.com/user-attachments/assets/a9de6d4c-77d7-461e-a61c-2838b51296a6)
-
-Save the file
-
 The ExperienceComponent.tsx should now look like this:
 
     import { graphql } from "@/graphql/gql";
@@ -367,6 +342,31 @@ The ExperienceComponent.tsx should now look like this:
     }
     
     export default ExperienceComponent
+
+### 9.4.4 Use ExperienceComponent
+Replace the default NexJs HTML with the ExperienceComponent
+
+Open page.tsx under src/app and replace all HTML with the following:
+
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <ExperienceComponent url={null} version={null} />
+    </main>
+
+The page.tsx should look like the following now:
+
+    import ExperienceComponent from "@/components/base/ExperienceComponent";
+
+    export default function Home() {
+    return (
+        <main className="flex min-h-screen flex-col items-center justify-between p-24">
+        <ExperienceComponent url={null} version={null} />
+        </main>
+    );
+    }
+
+![image](https://github.com/user-attachments/assets/a9de6d4c-77d7-461e-a61c-2838b51296a6)
+
+Save the file
 
 ### 9.4.5 Test application
 Try the application in a browser
