@@ -95,7 +95,7 @@ Add the following in the file
 
 Add the singleKey at the end of the value. This is how the example account will look like
 
-      GRAPH_API_URL="https://cg.optimizely.com/content/v2?auth=nSabkbOsWUA55R2YBSYvuGCOgfAnEqE5Zah5fTHsaKlm1kQi"
+      GRAPH_API_URL="https://cg.optimizely.com/content/v2?auth=uoEeuKqiLQst3PVLfopLFkqESLlgXERvm0uvAVYSjjNMJPqi"
 
 ![image](https://github.com/user-attachments/assets/a0701331-11cc-4f1c-ba9f-2be14e83eb37)
 
