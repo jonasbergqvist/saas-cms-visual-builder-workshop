@@ -217,6 +217,7 @@ Upen 'ExperienceComponent.tsx' and do the same change of the query that you did 
                   key
                   nodeType
                   nodes {
+                  __typename
                   key
                   nodeType
                   ... on CompositionStructureNode {
@@ -289,6 +290,7 @@ The full ExperienceComponent.tsx should now look like this
                 key
                 nodeType
                 nodes {
+                __typename
                 key
                 nodeType
                 ... on CompositionStructureNode {
@@ -442,6 +444,7 @@ The 'ExperienceComponent.tsx' should now look like:
                   key
                   nodeType
                   nodes {
+                  __typename
                   key
                   nodeType
                   ... on CompositionStructureNode {
@@ -684,6 +687,7 @@ The file should look like the following after the change
                   key
                   nodeType
                   nodes {
+                  __typename
                   key
                   nodeType
                   ... on CompositionStructureNode {
